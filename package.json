@@ -1,9 +1,9 @@
 {
-  "name": "3d-portfolio",
+  "name": "abhi-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://abhi972527.github.io/3d-portfolio",
+  "homepage": "https://abhi972527.github.io/abhi-portfolio",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
