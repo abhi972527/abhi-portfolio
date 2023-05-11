@@ -313,7 +313,7 @@ const projects = [
 const contactInfo = [
     {
         name: "Git",
-        content: "github.com/abhi972527",
+        content: "github.com/git-abhijeet",
         icon: gitBlack,
     },
     {
