@@ -14,9 +14,21 @@
 }
 
 .hash-span {
-  margin-top: -100px;
+  /* margin-top: -50px; */
   padding-bottom: 100px;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .hash-span {
+    margin-top: -40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hash-span {
+    margin-top: -62px;
+  }
 }
 
 .black-gradient {
