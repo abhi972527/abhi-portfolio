@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import { Link, Element } from 'react-scroll';
 
 // import "../assets/styles/hamburger.css"
 import { styles } from '../styles'
@@ -12,32 +13,12 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
-  // useEffect(() => {
-  //   function handleScroll() {
-  //     const sections = document.querySelectorAll('section');
-  //     console.log("🚀 ~ file: Navbar.jsx:18 ~ handleScroll ~ sections:", sections)
-  //     const navLinks = document.querySelectorAll('.navbar li');
-
-  //     sections.forEach((section, index) => {
-  //       console.log("🚀 ~ file: Navbar.jsx:22 ~ sections.forEach ~ index:", index)
-  //       const rect = section.getBoundingClientRect();
-  //       console.log("🚀 ~ file: Navbar.jsx:23 ~ sections.forEach ~ rect:", rect)
-  //       const offset = window.pageYOffset || document.documentElement.scrollTop;
-
-  //       if (offset >= rect.top && offset < rect.bottom) {
-  //         setActive(navLinks[index].textContent);
-  //       }
-  //     });
-  //   }
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
+  const handleSetActive = (title) => {
+    setActive(title);
+  };
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-10 bg-primary bg-opacity-20 backdrop-blur-lg`}>
+    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-10 bg-opacity-20 backdrop-blur-lg shadow-2xl`}>
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         < Link
           to="/"
@@ -59,7 +40,19 @@ const Navbar = () => {
               className={`${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              {/* <a href={`#${link.id}`}> */}
+              <Link
+                activeClass="active"
+                to={link.id}
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={50}
+                onSetActive={() => handleSetActive(link.title)}
+              >
+                {link.title}
+              </Link>
+              {/* </a> */}
             </li>
           ))}
           <li
