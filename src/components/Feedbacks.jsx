@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import AOS from 'aos';
 
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
@@ -44,18 +45,27 @@ const FeedbackCard = ({
 );
 
 const Feedbacks = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: false,
+      easing: 'ease-in',
+    });
+  }, []);
+
   return (
     <div className={`md:mt-12 bg-black-100 rounded-[20px]`}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
-        <motion.div variants={textVariant()}>
-          <h2 className={styles.sectionHeadText}>Testimonials.</h2>
+        {/* <motion.div variants={textVariant()}> */}
+          <h2 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={styles.sectionHeadText}>Testimonials.</h2>
           {/* <p className={styles.sectionSubText}>What others say</p> */}
-          <div className={`${styles.sectionSubText} text-center flex justify-center items-center`}>
+          <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} text-center flex justify-center items-center`}>
             <hr className="w-12 md:w-32" /><span className="px-2 md:px-4">What others say</span><hr className="w-12 md:w-32" />
           </div>
-        </motion.div>
+        {/* </motion.div> */}
       </div>
       <div className={`-mt-32 md:-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
         {testimonials.map((testimonial, index) => (

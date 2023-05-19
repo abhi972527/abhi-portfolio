@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
+import AOS from 'aos';
+
 
 import { styles } from "../styles";
 import { github, launch } from "../assets";
@@ -80,14 +82,23 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: false,
+      easing: 'ease-in',
+    });
+  }, []);
+
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
-        <div className={`${styles.sectionSubText} text-center flex justify-center items-center mt-2 md:mt-4`}>
+      {/* <motion.div variants={textVariant()}> */}
+        <h2 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} text-center flex justify-center items-center mt-2 md:mt-4`}>
           <hr className="bg-black h-[2px] w-12 md:w-32" /><span className="text-white px-2 md:px-4">My work</span><hr className="bg-black h-[2px] w-12 md:w-32" />
         </div>
-      </motion.div>
+      {/* </motion.div> */}
 
       <div className='w-full flex justify-center'>
         <motion.p
