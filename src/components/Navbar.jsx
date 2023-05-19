@@ -11,6 +11,31 @@ import { fadeIn, textVariant } from "../utils/motion";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
+  // useEffect(() => {
+  //   function handleScroll() {
+  //     const sections = document.querySelectorAll('section');
+  //     console.log("🚀 ~ file: Navbar.jsx:18 ~ handleScroll ~ sections:", sections)
+  //     const navLinks = document.querySelectorAll('.navbar li');
+
+  //     sections.forEach((section, index) => {
+  //       console.log("🚀 ~ file: Navbar.jsx:22 ~ sections.forEach ~ index:", index)
+  //       const rect = section.getBoundingClientRect();
+  //       console.log("🚀 ~ file: Navbar.jsx:23 ~ sections.forEach ~ rect:", rect)
+  //       const offset = window.pageYOffset || document.documentElement.scrollTop;
+
+  //       if (offset >= rect.top && offset < rect.bottom) {
+  //         setActive(navLinks[index].textContent);
+  //       }
+  //     });
+  //   }
+
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
+
   return (
     <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-10 bg-primary bg-opacity-20 backdrop-blur-lg`}>
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -22,7 +47,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className='w-9 h-9 object-contain' />
+          <img src={logo} alt="logo" className='w-12 h-12 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex' >
             Abhijeet
           </p>
