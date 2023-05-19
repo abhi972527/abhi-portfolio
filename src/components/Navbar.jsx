@@ -58,7 +58,7 @@ const Navbar = () => {
           <li
             className={`text-white hover:text-white text-[18px] font-medium cursor-pointer`}
           >
-            <a href="https://drive.google.com/drive/folders/1tX79vNXfvP1BQrjQjbjvkWvfFu0ZVMrR?usp=share_link" target='_blank'>
+            <a href="https://drive.google.com/file/d/1yNKvxNJ2Ro7f-neOhRP_k-E90ePauKry/view?usp=share_link" target='_blank'>
               Resume
             </a>
           </li>
@@ -86,7 +86,7 @@ const Navbar = () => {
               ))}
               <li
                 className={`text-white ml-10 font-poppins text-[24px] font-medium cursor-pointer`}>
-                <a href="https://drive.google.com/drive/folders/1tX79vNXfvP1BQrjQjbjvkWvfFu0ZVMrR?usp=share_link" target='_blank'>
+                <a href="https://drive.google.com/file/d/1yNKvxNJ2Ro7f-neOhRP_k-E90ePauKry/view?usp=share_link" target='_blank'>
                   Resume
                 </a>
               </li>

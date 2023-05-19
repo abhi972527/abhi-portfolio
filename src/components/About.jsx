@@ -47,7 +47,7 @@ const About = () => {
           <hr className="w-12 md:w-32" /><span className="text-white px-2 md:px-4">WHO I AM</span><hr className="w-12 md:w-32" />
         </div>
         <div className="mt-12 md:mt-18">
-          <motion.p
+          <motion.div
             variants={fadeIn("", "", 0.1, 1)}
             className='text-secondary text-[16px] md:text-[24px] leading-[30px] md:leading-[50px]'
           >
@@ -74,7 +74,7 @@ const About = () => {
               real-world problems. Passionate about coding and intensely interested in working in a progressive organization. 
               Let's work together to bring your ideas to life!
             </div>
-          </motion.p>
+          </motion.div>
         </div>
       </div>
     </section>

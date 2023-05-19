@@ -18,10 +18,11 @@ const Tech = () => {
       </div>
       <div className='mt-10 md:mt-20 flex flex-row flex-wrap justify-center gap-8 md:gap-[72px]'>
         {technologies.map((technology) => (
-          <div className='w-20 h-20 md:w-28 md:h-28 flex items-center justify-center bg-[#fff] rounded-full shadow-lg' key={technology.name}>
+          <div className='w-20 h-20 md:w-28 md:h-28 cursor-pointer flex items-center justify-center bg-[#fff] rounded-full hover:drop-shadow-2xl' key={technology.name}>
             <motion.p
-              variants={fadeIn("", "", 0.1, 1)}>
-              <img src={technology.icon} alt="" className="cursor-pointer w-[48px] h-[48px] hover:w-[52px] hover:h-[52px] md:w-[64px] md:h-[64px] md:hover:w-[66px] md:hover:h-[66px] transform hover:scale-110 transition duration-500 ease-in-out" />
+              variants={fadeIn("", "", 0.1, 1)}
+            >
+              <img src={technology.icon} alt="" className="cursor-pointer w-[48px] h-[48px] hover:w-[52px] hover:h-[52px] md:w-[64px] md:h-[64px] md:hover:w-[65px] md:hover:h-[65px] transform hover:scale-110 transition duration-500 ease-in-out" />
             </motion.p>
           </div>
         ))}
