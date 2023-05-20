@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 import AOS from 'aos';
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
+// import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { coding, build, contact, mail, call, linkedin, github } from "../assets/index.js";
