@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import { Link, Element } from 'react-scroll';
 
 // import "../assets/styles/hamburger.css"
 import { styles } from '../styles'
@@ -11,8 +12,13 @@ import { fadeIn, textVariant } from "../utils/motion";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
+  const handleSetActive = (title) => {
+    setActive(title);
+  };
+
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-10 bg-primary bg-opacity-20 backdrop-blur-lg`}>
+    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-10 bg-opacity-40 backdrop-blur-lg shadow-2xl`}>
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         < Link
           to="/"
@@ -22,7 +28,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className='w-9 h-9 object-contain' />
+          <img src={logo} alt="logo" className='w-12 h-12 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex' >
             Abhijeet
           </p>
@@ -34,13 +40,25 @@ const Navbar = () => {
               className={`${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              {/* <a href={`#${link.id}`}> */}
+              <Link
+                activeClass="active"
+                to={link.id}
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={50}
+                onSetActive={() => handleSetActive(link.title)}
+              >
+                {link.title}
+              </Link>
+              {/* </a> */}
             </li>
           ))}
           <li
             className={`text-white hover:text-white text-[18px] font-medium cursor-pointer`}
           >
-            <a href="https://drive.google.com/drive/folders/1tX79vNXfvP1BQrjQjbjvkWvfFu0ZVMrR?usp=share_link" target='_blank'>
+            <a href="https://drive.google.com/file/d/1yNKvxNJ2Ro7f-neOhRP_k-E90ePauKry/view?usp=share_link" target='_blank'>
               Resume
             </a>
           </li>
@@ -68,7 +86,7 @@ const Navbar = () => {
               ))}
               <li
                 className={`text-white ml-10 font-poppins text-[24px] font-medium cursor-pointer`}>
-                <a href="https://drive.google.com/drive/folders/1tX79vNXfvP1BQrjQjbjvkWvfFu0ZVMrR?usp=share_link" target='_blank'>
+                <a href="https://drive.google.com/file/d/1yNKvxNJ2Ro7f-neOhRP_k-E90ePauKry/view?usp=share_link" target='_blank'>
                   Resume
                 </a>
               </li>

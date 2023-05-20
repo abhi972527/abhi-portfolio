@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
+import AOS from 'aos';
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -57,16 +58,25 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: false,
+      easing: 'ease-in',
+    });
+  }, []);
+
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
-        </h2>
-        <div className={`${styles.sectionSubText} text-center flex justify-center items-center mt-4 md:mt-8`}>
-          <hr className="w-12 md:w-32" /><span className="text-white px-2 md:px-4">What I have done so far</span><hr className="w-12 md:w-32" />
-        </div>
-      </motion.div>
+      {/* <motion.div variants={textVariant()}> */}
+      <h2 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText} text-center`}>
+        Work Experience.
+      </h2>
+      <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} text-center flex justify-center items-center mt-4 md:mt-8`}>
+        <hr className="w-12 md:w-32" /><span className="text-white px-2 md:px-4">What I have done so far</span><hr className="w-12 md:w-32" />
+      </div>
+      {/* </motion.div> */}
 
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline>
