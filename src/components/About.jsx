@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
+import AOS from 'aos';
 import TypewriterComponent from "typewriter-effect";
 
 import { styles } from "../styles";
@@ -37,13 +38,22 @@ import { fadeIn, textVariant } from "../utils/motion";
 // );
 
 const About = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: false,
+      easing: 'ease-in',
+    });
+  }, []);
+
   return (
     <section className="w-full mb-12 md:mb-0">
       <div className="">
-        <div className={`${styles.sectionHeadText}  mt-0 md:mt-8`}>
+        <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText}  mt-0 md:mt-8`}>
           About Me
         </div>
-        <div className={`${styles.sectionSubText} flex justify-center items-center mt-4 md:mt-8`}>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} flex justify-center items-center mt-4 md:mt-8`}>
           <hr className="w-12 md:w-32" /><span className="text-white px-2 md:px-4">WHO I AM</span><hr className="w-12 md:w-32" />
         </div>
         <div className="mt-12 md:mt-18">
@@ -66,12 +76,12 @@ const About = () => {
                 }}
               />
             </div>
-            <div className="text-justify">
+            <div data-aos="zoom-in" data-aos-anchor-placement="center-bottom" className="text-justify">
               I'm a skilled software developer with experience in
               JavaScript, and expertise in frameworks like React, Vue, Node.js, and
               Three.js. I'm a quick learner, capable of writing production-ready code and collaborate closely with clients to
               create efficient, scalable, and user-friendly solutions that solve
-              real-world problems. Passionate about coding and intensely interested in working in a progressive organization. 
+              real-world problems. Passionate about coding and intensely interested in working in a progressive organization.
               Let's work together to bring your ideas to life!
             </div>
           </motion.div>

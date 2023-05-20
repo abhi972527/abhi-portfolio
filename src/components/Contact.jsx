@@ -2,9 +2,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import lottie from "lottie-web";
 import emailjs from "@emailjs/browser";
+import AOS from 'aos';
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
+// import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { coding, build, contact, mail, call, linkedin, github } from "../assets/index.js";
@@ -20,6 +21,11 @@ const Contact = () => {
   });
 
   useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: false,
+      easing: 'ease-in',
+    });
     if (contactAnimation.current && !contactAnimation.current.hasChildNodes()) {
       lottie.loadAnimation({
         container: contactAnimation.current,
@@ -88,9 +94,9 @@ const Contact = () => {
         variants={slideIn("left", "between", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 pt-6 rounded-2xl'
       >
-        <h3 className={styles.sectionHeadText}>Contact Me</h3>
+        <h3 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={styles.sectionHeadText}>Contact Me</h3>
         {/* <p className={styles.sectionSubText}>Get in touch</p> */}
-        <div className={`${styles.sectionSubText} text-center flex justify-center items-center`}>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} text-center flex justify-center items-center`}>
           <hr className="w-12 md:w-32" /><span className="px-2 md:px-4">Get in touch</span><hr className="w-12 md:w-32" />
         </div>
 
@@ -155,7 +161,7 @@ const Contact = () => {
         {/* <div className=" flex flex-col gap-16"> */}
         {/* <div className="flex"> */}
         <div className=" md:p-[40px] rounded-[20px] p-[20px] grid gap-3 m-auto bg-black-100 text-white">
-          <div className={`${styles.heroSubText} text-center flex justify-center items-center`}>
+          <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.heroSubText} text-center flex justify-center items-center`}>
             <hr className="w-12 md:w-32" /><span className="px-2 md:px-4">Get in touch</span><hr className="w-12 md:w-32" />
           </div>
 
