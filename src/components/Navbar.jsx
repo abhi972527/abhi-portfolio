@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { Link, Element } from 'react-scroll';
+import AOS from 'aos';
 
 // import "../assets/styles/hamburger.css"
 import { styles } from '../styles'
@@ -32,9 +33,17 @@ const Navbar = () => {
     setActive(title);
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: false,
+      easing: 'ease-in',
+    });
+  }, []);
+
   return (
     <nav id='nav-menu' className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-10 bg-opacity-20 shadow-2xl`}>
-      <div className='w-full flex flex-row-reverse md:flex-row justify-between items-center max-w-7xl mx-auto'>
+      <div className='w-full flex flex-row-reverse lg:flex-row justify-between items-center max-w-7xl mx-auto'>
         < Link
           to="/"
           className='flex items-center gap-2'
@@ -48,7 +57,7 @@ const Navbar = () => {
             Abhijeet
           </p>
         </ Link>
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden lg:flex flex-row gap-10'>
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -78,14 +87,14 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <div id="ham" className='md:hidden'>
+        <div id="ham" className='lg:hidden'>
           <button className="burger" onClick={toggleMenu}></button>
           <div className="background"></div>
           <div className="menu h-full">
             <nav>
-              <ul className='flex min-w-full justify-start flex-col gap-8'>
+              <div data-aos="fade-left" className='flex min-w-full justify-start flex-col gap-8'>
                 {navLinks.map((link, index) => (
-                  <li
+                  <div data-aos="fade-left"
                     key={link.id} className={`${active === link.title ? "text-white" : "text-white"} ml-10 font-poppins text-[24px] font-medium cursor-pointer`}
                     onClick={() => {
                       setToggle(!toggle)
@@ -96,15 +105,15 @@ const Navbar = () => {
                     <a href={`#${link.id}`}>
                       {link.title}
                     </a>
-                  </li>
+                  </div>
                 ))}
-                <li
+                <div
                   className={`text-white ml-10 font-poppins text-[24px] font-medium cursor-pointer`}>
                   <a href="https://drive.google.com/drive/folders/1tX79vNXfvP1BQrjQjbjvkWvfFu0ZVMrR?usp=share_link" target='_blank'>
                     Resume
                   </a>
-                </li>
-              </ul>
+                </div>
+              </div>
             </nav>
           </div>
         </div>
