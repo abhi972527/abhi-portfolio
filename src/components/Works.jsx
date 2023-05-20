@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
+import AOS from 'aos';
+
 
 import { styles } from "../styles";
 import { github, launch } from "../assets";
@@ -18,14 +21,6 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
-      {/* <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full border'
-      > */}
       <div className='relative w-full h-[230px]'>
         <img
           src={image}
@@ -80,18 +75,26 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: false,
+      easing: 'ease-in',
+    });
+  }, []);
+
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
-        <div className={`${styles.sectionSubText} text-center flex justify-center items-center mt-2 md:mt-4`}>
-          <hr className="bg-black h-[2px] w-12 md:w-32" /><span className="text-white px-2 md:px-4">My work</span><hr className="bg-black h-[2px] w-12 md:w-32" />
-        </div>
-      </motion.div>
+      {/* <motion.div variants={textVariant()}> */}
+      <h2 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText}`}>Projects.</h2>
+      <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} text-center flex justify-center items-center mt-2 md:mt-4`}>
+        <hr className="bg-black h-[2px] w-12 md:w-32" /><span className="text-white px-2 md:px-4">My work</span><hr className="bg-black h-[2px] w-12 md:w-32" />
+      </div>
+      {/* </motion.div> */}
 
       <div className='w-full flex justify-center'>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+        <div data-aos="flip-left"
           className='mt-3 text-secondary text-[16px] md:text-[20px] max-w-3xl leading-[30px] text-justify'
         >
           Following projects showcases my skills and experience through
@@ -99,7 +102,7 @@ const Works = () => {
           links to code repositories and live demos in it. It reflects my
           ability to solve complex problems, work with different technologies,
           and manage projects effectively.
-        </motion.p>
+        </div>
       </div>
 
       <div className='mt-20 flex flex-wrap gap-7'>
