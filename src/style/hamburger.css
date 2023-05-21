@@ -1,5 +1,5 @@
 #nav-menu{
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(8px);
 }
 
 header button {
@@ -26,6 +26,7 @@ header button {
     background-image: url("../assets/menu.svg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 30%;
 }
 
 body.open .burger {

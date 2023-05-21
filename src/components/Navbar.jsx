@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { css } from '@emotion/react';
 // import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { Link, Element } from 'react-scroll';
@@ -14,20 +15,53 @@ import "../style/hamburger.css";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
+
+  // let sidebar = false;
+  // const toggleMenu = () => {
+  //   document.getElementById("nav-menu").style.backdropFilter = "none";
+  //   document.body.classList.toggle("open");
+  //   console.log("🚀 ~ file: Navbar.jsx:19 ~ Navbar ~ sidebar:", sidebar)
+  //   if(sidebar) {
+  //     document.getElementById("nav-menu").style.backdropFilter = "blur(8px)"
+  //   }
+  //   setSidebar(!sidebar);
+  //   // sidebar = !sidebar
+  //   // addFilter()
+  // }
 
   const toggleMenu = () => {
-    document.getElementById("nav-menu").style.backdropFilter = "none";
-    document.body.classList.toggle("open");
-    addFilter()
-  }
-
-  let temp = 0;
-  const addFilter = () => {
-    temp++;
-    if (temp % 2 == 0) {
-      document.getElementById("nav-menu").style.backdropFilter = "blur(16px)"
+    const navMenu = document.getElementById("nav-menu");
+    if (sidebar) {
+      navMenu.style.backdropFilter = "blur(8px)";
+    } else {
+      navMenu.style.backdropFilter = "none";
     }
-  }
+    document.body.classList.toggle("open");
+    setSidebar(!sidebar);
+  };
+
+  const animationStyles = css`
+    @keyframes fadeLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  `;
+
+  // let temp = 0;
+  // const addFilter = () => {
+  //   console.log("🚀 ~ file: Navbar.jsx:25 ~ Navbar ~ temp:", temp)
+  //   temp++;
+  //   if (temp % 2 === 0) {
+  //     document.getElementById("nav-menu").style.backdropFilter = "blur(8px)"
+  //   }
+  // }
 
   const handleSetActive = (title) => {
     setActive(title);
@@ -42,7 +76,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav id='nav-menu' className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-10 bg-opacity-20 shadow-2xl`}>
+    <nav id='nav-menu' className={`${styles.paddingX} w-full flex items-center p-4 lg:py-5 fixed top-0 z-10 bg-opacity-20 shadow-lg`}>
       <div className='w-full flex flex-row-reverse lg:flex-row justify-between items-center max-w-7xl mx-auto'>
         < Link
           to="/"
@@ -94,7 +128,9 @@ const Navbar = () => {
             <nav>
               <div data-aos="fade-left" className='flex min-w-full justify-start flex-col gap-8'>
                 {navLinks.map((link, index) => (
-                  <div data-aos="fade-left"
+                  <div
+                    // data-aos="fade-left"
+                    // data-aos-delay={(index + 1) * 400}
                     key={link.id} className={`${active === link.title ? "text-white" : "text-white"} ml-10 font-poppins text-[24px] font-medium cursor-pointer`}
                     onClick={() => {
                       setToggle(!toggle)

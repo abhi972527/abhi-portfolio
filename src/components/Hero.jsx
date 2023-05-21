@@ -72,7 +72,7 @@ const Hero = () => {
         </div>
       </div>
       {/* <ComputersCanvas /> */}
-      <div className='lg:w-[550px] lg:h-[550px] md:w-3/5 md:h-3/5 w-4/5 h-4/5 absolute bottom-0 right-10 md:bottom-20 lg:bottom-20 lg:right-20' ref={codingAnimation} />
+      <div className='lg:w-[550px] lg:h-[550px] hidden min-[380px]:flex md:w-3/5 md:h-3/5 w-4/5 h-4/5 absolute bottom-0 right-10 md:bottom-20 lg:bottom-20 lg:right-20' ref={codingAnimation} />
       <div className='absolute xs:bottom-14 bottom-16 w-full flex justify-center items-center'>
         <a href="#about">
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
