@@ -45,6 +45,10 @@ import blowhorn from "./company/blowhorn.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import filmstudio from "./filmstudio.png";
+import airbnb from "./airbnb.png";
+import whatsapp from "./whatsapp.png";
+import whatsApp from "./whatsApp.png";
 
 import coding from "./lotties/coding.json"
 import build from "./lotties/build.json"
@@ -97,4 +101,8 @@ export {
   coding,
   build,
   contact,
+  filmstudio,
+  airbnb,
+  whatsapp,
+  whatsApp,
 };

@@ -37,6 +37,10 @@ import {
     linkedin,
     call,
     email,
+    filmstudio,
+    airbnb,
+    whatsapp,
+    whatsApp,
 } from "../assets";
 
 export const navLinks = [
@@ -60,10 +64,10 @@ export const navLinks = [
         id: "project",
         title: "Projects",
     },
-    {
-        id: "feedback",
-        title: "Testimonials",
-    },
+    // {
+    //     id: "feedback",
+    //     title: "Testimonials",
+    // },
     {
         id: "contact",
         title: "Contact",
@@ -166,7 +170,7 @@ const technologies = [
 
 const experiences = [
     {
-        title: "Full Stack Web Developer",
+        title: "Internship",
         company_name: "Masai",
         icon: masai,
         iconBg: "#383E56",
@@ -246,12 +250,59 @@ const testimonials = [
 
 const projects = [
     {
-        name: "Car Rent",
+        name: "FilmStudio",
         description:
-            "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+            "The Web-based Movie Catalog Platform is a dynamic and user-friendly website that provides movie enthusiasts with an immersive experience to explore, search, and stay updated on the latest movies.",
+            // "Web-based platform that allows users to see, search, and get updates regarding the new and latest movies along with trailer cover pic and lot more info.",
         tags: [
             {
                 name: "react",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "material UI",
+                color: "green-text-gradient",
+            },
+            // {
+            //     name: "tailwind",
+            //     color: "pink-text-gradient",
+            // },
+        ],
+        image: filmstudio,
+        source_code_link: "https://github.com/git-abhijeet/Filmpire",
+        live_project_link: "https://abhi-filmpire.netlify.app",
+    },
+    {
+        name: "AirBnb (Clone)",
+        description:
+            "Inspired by the popular Airbnb platform, this web-based Airbnb clone project allows users to rent, explore and book a wide range of accommodations, including apartments, houses, villas, and more providing users with a unique and personalized accommodation booking experience.",
+            // "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        tags: [
+            {
+                name: "nextjs",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "restapi",
+                color: "green-text-gradient",
+            },
+            {
+                name: "tailwind",
+                color: "pink-text-gradient",
+            },
+        ],
+        image: airbnb,
+        source_code_link: "https://github.com/git-abhijeet/airbnb_clone",
+        live_project_link: "https://airbnb-clone-practice-project.vercel.app",
+    },
+    {
+        name: "WhatsApp (Clone)",
+        description:
+            "The WhatsApp Clone is a web-based application that replicates the popular messaging platform, WhatsApp. It allows users to send text messages, make voice and video calls, and share media files with their contacts.",
+            // "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        tags: [
+            {
+                name: "nextjs",
                 color: "blue-text-gradient",
             },
             {
@@ -263,50 +314,9 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: carrent,
-        source_code_link: "https://github.com/",
-    },
-    {
-        name: "Job IT",
-        description:
-            "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-        tags: [
-            {
-                name: "react",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "restapi",
-                color: "green-text-gradient",
-            },
-            {
-                name: "scss",
-                color: "pink-text-gradient",
-            },
-        ],
-        image: jobit,
-        source_code_link: "https://github.com/",
-    },
-    {
-        name: "Trip Guide",
-        description:
-            "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-        tags: [
-            {
-                name: "nextjs",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "supabase",
-                color: "green-text-gradient",
-            },
-            {
-                name: "css",
-                color: "pink-text-gradient",
-            },
-        ],
-        image: tripguide,
-        source_code_link: "https://github.com/",
+        image: whatsapp,
+        source_code_link: "https://github.com/git-abhijeet/whatsApp_clone",
+        live_project_link: "https://whats-app-clone-delta.vercel.app",
     },
 ];
 

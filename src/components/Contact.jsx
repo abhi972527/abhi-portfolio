@@ -167,22 +167,30 @@ const Contact = () => {
 
           <div className="mt-3 md:mt-5 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
             <img src={github} alt="github" className="h-6 w-6 md:h-8 md:w-8" />
-            <a href="https://github.com/git-abhijeet" id="contact-github" target="_blank">github.com/<u>abhijeet</u></a>
+            <a className="hover:underline" href="https://github.com/git-abhijeet" id="contact-github" target="_blank">github.com/git-abhijeet</a>
           </div>
 
           <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
             <img src={linkedin} alt="linkedin" className="h-6 w-6 md:h-8 md:w-8" />
-            <a href="https://www.linkedin.com/in/abhijeet-kumar-0238301bb/" target="_blank" id="contact-linkedin">linkedin.com/in/<u>abhijeet-kumar</u></a>
+            <a className="hover:underline" href="https://www.linkedin.com/in/abhijeet-kumar-0238301bb/" target="_blank" id="contact-linkedin">linkedin.com/in/abhijeet-kumar</a>
           </div>
 
           <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
             <img src={mail} alt="mail" className="h-6 w-6 md:h-8 md:w-8" />
-            <p id="contact-email"><u>abhijeet.kr.chaurasiya</u>@gmail.com</p>
+            <p id="contact-email">
+              <a className="hover:underline" href="mailto:abhijeet.kr.chaurasiya@gmail.com">
+                abhijeet.kr.chaurasiya@gmail.com
+              </a>
+            </p>
           </div>
 
           <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
             <img src={call} alt="call" className="h-6 w-6 md:h-8 md:w-8" />
-            <span id="contact-phone">+91 9835-882-844</span>
+            <span id="contact-phone">
+              <a className="hover:underline" href="tel:+919835882844">
+                +91 9835-882-844
+              </a>
+            </span>
           </div>
         </div>
         {/* </div> */}
