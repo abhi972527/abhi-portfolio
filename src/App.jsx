@@ -7,24 +7,30 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-          <Navbar />
+        <Navbar />
         <div className=" bg-cover bg-no-repeat bg-center">
           <Hero />
         </div>
-        <div className="bg-aboutUs bg-cover bg-no-repeat bg-center md:min-h-screen">
+        {/* <div className="bg-aboutUs bg-cover bg-no-repeat bg-center md:min-h-screen"> */}
+        <div className="bg-white bg-no-repeat bg-center md:min-h-screen">
           <About />
         </div>
-        <Experience />
-        <div className="bg-[#DFDFDF] md:bg-skills bg-cover bg-no-repeat bg-center lg:min-h-screen">
+        {/* <div className="bg-[#DFDFDF] md:bg-skills bg-cover bg-no-repeat bg-center lg:min-h-screen"> */}
+        <div className="bg-[#F6F6F6] lg:min-h-screen">
           <Tech />
         </div>
-        <Works />
-        {/* <Feedbacks /> */}
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
+        <div className="bg-white">
+          <Experience />
         </div>
-        <Created/>
+        <div className="bg-[#F6F6F6]">
+          <Works />
+        </div>
+        {/* <Feedbacks /> */}
+        <div className="bg-white">
+          <Contact />
+          {/* <StarsCanvas /> */}
+        </div>
+        <Created />
       </div>
     </BrowserRouter>
   );

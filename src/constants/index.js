@@ -53,12 +53,12 @@ export const navLinks = [
         title: "About",
     },
     {
-        id: "work",
-        title: "Work",
-    },
-    {
         id: "skills",
         title: "Skills",
+    },
+    {
+        id: "work",
+        title: "Work",
     },
     {
         id: "project",
@@ -75,22 +75,38 @@ export const navLinks = [
 ];
 
 const services = [
+    // {
+    //     title: "Web Developer",
+    //     icon: web,
+    // },
+    // {
+    //     title: "React Native Developer",
+    //     icon: mobile,
+    // },
+    // {
+    //     title: "Backend Developer",
+    //     icon: backend,
+    // },
+    // {
+    //     title: "Content Creator",
+    //     icon: creator,
+    // },
     {
-        title: "Web Developer",
-        icon: web,
+        title: "Web Design",
+        content: "Creating visually appealing and user-friendly websites that adapt to different screen sizes and devices."
     },
     {
-        title: "React Native Developer",
-        icon: mobile,
+        title: "Front-End Dev",
+        content: "Implementing the client-side functionality of a website using HTML, CSS, and JavaScript."
     },
     {
-        title: "Backend Developer",
-        icon: backend,
+        title: "Back-End Dev",
+        content: "Building the server-side components and functionality of a website using  Node.js."
     },
     {
-        title: "Content Creator",
-        icon: creator,
-    },
+        title: "Web Optimization",
+        content: "Improving website performance by optimizing page load times, and minimizing resource usage."
+    }
 ];
 
 const technologies = [
@@ -251,9 +267,11 @@ const testimonials = [
 const projects = [
     {
         name: "FilmStudio",
+        short: "A Movie Application",
+        bg: "bg-[#5F9FFE]",
         description:
             "The Web-based Movie Catalog Platform is a dynamic and user-friendly website that provides movie enthusiasts with an immersive experience to explore, search, and stay updated on the latest movies.",
-            // "Web-based platform that allows users to see, search, and get updates regarding the new and latest movies along with trailer cover pic and lot more info.",
+        // "Web-based platform that allows users to see, search, and get updates regarding the new and latest movies along with trailer cover pic and lot more info.",
         tags: [
             {
                 name: "react",
@@ -274,9 +292,11 @@ const projects = [
     },
     {
         name: "AirBnb (Clone)",
+        short: "A House Rent Application",
+        bg: "bg-[#56B0B9]",
         description:
             "Inspired by the popular Airbnb platform, this web-based Airbnb clone project allows users to rent, explore and book a wide range of accommodations, including apartments, houses, villas, and more providing users with a unique and personalized accommodation booking experience.",
-            // "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        // "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
         tags: [
             {
                 name: "nextjs",
@@ -297,9 +317,11 @@ const projects = [
     },
     {
         name: "WhatsApp (Clone)",
+        short: "A Chatting Application",
+        bg: "bg-[#1F1D2B]",
         description:
             "The WhatsApp Clone is a web-based application that replicates the popular messaging platform, WhatsApp. It allows users to send text messages, make voice and video calls, and share media files with their contacts.",
-            // "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        // "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
         tags: [
             {
                 name: "nextjs",

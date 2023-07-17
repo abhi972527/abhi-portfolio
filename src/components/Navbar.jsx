@@ -30,6 +30,17 @@ const Navbar = () => {
   //   // addFilter()
   // }
 
+  const navMenu = document.getElementById('nav-menu');
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 30) {
+      navMenu.classList.add('shadow-lg');
+    } else {
+      navMenu.classList.remove('shadow-lg');
+    }
+  });
+
+
   const toggleMenu = () => {
     const navMenu = document.getElementById("nav-menu");
     if (sidebar) {
@@ -41,18 +52,18 @@ const Navbar = () => {
     setSidebar(!sidebar);
   };
 
-  const animationStyles = css`
-    @keyframes fadeLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  `;
+  // const animationStyles = css`
+  //   @keyframes fadeLeft {
+  //     from {
+  //       opacity: 0;
+  //       transform: translateX(-20px);
+  //     }
+  //     to {
+  //       opacity: 1;
+  //       transform: translateX(0);
+  //     }
+  //   }
+  // `;
 
   // let temp = 0;
   // const addFilter = () => {
@@ -76,7 +87,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav id='nav-menu' className={`${styles.paddingX} w-full flex items-center p-4 lg:py-5 fixed top-0 z-10 bg-opacity-20 shadow-lg`}>
+    <nav id='nav-menu' className={`${styles.paddingX} bg-[#F6F6F6] w-full flex items-center p-4 lg:py-5 fixed top-0 z-10 duration-300 shadow-lg`}>
       <div className='w-full flex flex-row-reverse lg:flex-row justify-between items-center max-w-7xl mx-auto'>
         < Link
           to="/"
@@ -87,7 +98,7 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className='w-12 h-12 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex' >
+          <p className='text-black-200 text-[18px] font-bold cursor-pointer flex' >
             Abhijeet
           </p>
         </ Link>
@@ -95,7 +106,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
+              className={`${active === link.title ? "text-black-200" : "text-secondary"} hover:text-black-100 text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
               {/* <a href={`#${link.id}`}> */}
@@ -114,7 +125,7 @@ const Navbar = () => {
             </li>
           ))}
           <li
-            className={`text-white hover:text-white text-[18px] font-medium cursor-pointer`}
+            className={`text-black-200 hover:text-black-100 text-[18px] font-medium cursor-pointer`}
           >
             <a href="https://drive.google.com/file/d/1yNKvxNJ2Ro7f-neOhRP_k-E90ePauKry/view?usp=share_link" target='_blank'>
               Resume

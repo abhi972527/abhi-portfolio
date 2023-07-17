@@ -4,7 +4,7 @@ import { styles } from '../styles';
 const Created = ()=>{
 
     return (
-        <div className={`${styles.paddingX} bg-[#0E0F1F] h-[60px] flex justify-center items-center`}>
+        <div className={`${styles.paddingX} bg-[#F6F6F6] text-black h-[60px] flex justify-center items-center`}>
             <p>Created By <span className="text-[#407BFF]">Abhijeet</span></p>
         </div>
     )

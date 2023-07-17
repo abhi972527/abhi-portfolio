@@ -17,10 +17,10 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
+        background: "#F6F6F6",
+        color: "#151E2C",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid  #F6F6F6" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
@@ -34,9 +34,9 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
+        <h3 className='text-[#151E2C] text-[24px] font-bold'>{experience.title}</h3>
         <p
-          className='text-secondary text-[16px] font-semibold'
+          className='text-[#6F6F6F] text-[16px] font-semibold'
           style={{ margin: 0 }}
         >
           {experience.company_name}
@@ -47,7 +47,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className='text-[#6F74A7] text-[14px] pl-1 tracking-wider'
           >
             {point}
           </li>
@@ -70,16 +70,24 @@ const Experience = () => {
   return (
     <>
       {/* <motion.div variants={textVariant()}> */}
-      <h2 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText} text-center`}>
-        Work Experience.
+      <h2 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText} flex text-center`}>
+        <div className="flex mx-auto">
+          <div>
+            Work&nbsp;
+          </div> 
+          <div className='mx-auto'>
+            Experience
+            <div className='h-6 bg-[#FFBE62] -mt-9' />
+          </div>
+        </div>
       </h2>
       <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} text-center flex justify-center items-center mt-4 md:mt-8`}>
-        <hr className="w-12 md:w-32" /><span className="text-white px-2 md:px-4">What I have done so far</span><hr className="w-12 md:w-32" />
+        <hr className="w-12 md:w-32 h-[2px] bg-black" /><span className="text-black px-2 md:px-4">What I have done so far</span><hr className="w-12 md:w-32 h-[2px] bg-black" />
       </div>
       {/* </motion.div> */}
 
       <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
+        <VerticalTimeline lineColor={'black'}>
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}

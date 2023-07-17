@@ -50,21 +50,29 @@ const About = () => {
   return (
     <section className="w-full mb-12 md:mb-0">
       <div className="">
-        <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText}  mt-0 md:mt-8`}>
-          About Me
+        <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText} text-[#151E2C] flex mt-0 md:mt-8`}>
+          <div className="flex mx-auto">
+            <div>
+              About&nbsp;
+            </div>
+            <div className='mx-auto'>
+              Me
+              <div className='h-6 bg-[#FFBE62] -mt-9' />
+            </div>
+          </div>
         </div>
         <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} flex justify-center items-center mt-4 md:mt-8`}>
-          <hr className="w-12 md:w-32" /><span className="text-white px-2 md:px-4">WHO I AM</span><hr className="w-12 md:w-32" />
+          <hr className="w-12 md:w-32 h-[2px] bg-black" /><span className="text-black-100 px-2 md:px-4">WHO I AM</span><hr className="w-12 md:w-32 h-[2px] bg-black" />
         </div>
         <div className="mt-12 md:mt-18">
           <motion.div
             variants={fadeIn("", "", 0.1, 1)}
             className='text-secondary text-[16px] md:text-[24px] leading-[30px] md:leading-[50px]'
           >
-            <div className="my-5 text-[20px] text-white md:text-[42px] font-semibold">
+            <div className="my-5 text-[20px] text-[#6F74A7] md:text-[42px] font-semibold">
               Hi,
             </div>
-            <div className="my-5 text-[20px] md:flex text-white md:text-[42px] font-semibold">
+            <div className="my-5 text-[20px] md:flex text-[#6F74A7] md:text-[42px] font-semibold">
               I'm Abhijeet and
 
               I'm a &nbsp;
@@ -76,7 +84,7 @@ const About = () => {
                 }}
               />
             </div>
-            <div data-aos="zoom-in" data-aos-anchor-placement="center-bottom" className="text-justify">
+            <div data-aos="zoom-in" data-aos-anchor-placement="center-bottom" className="text-justify text-[#6F74A7]">
               I'm a skilled software developer with experience in
               JavaScript, and expertise in frameworks like React, Vue, Node.js, and
               Three.js. I'm a quick learner, capable of writing production-ready code and collaborate closely with clients to

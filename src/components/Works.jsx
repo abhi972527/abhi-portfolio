@@ -88,15 +88,26 @@ const Works = () => {
   return (
     <>
       {/* <motion.div variants={textVariant()}> */}
-      <h2 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText}`}>Projects.</h2>
+      <h2 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText} flex`}>
+        {/* Featured Projects */}
+        <div className="flex mx-auto">
+          <div>
+            Featured
+            <div className='h-6 bg-[#FFBE62] -mt-9' />
+          </div>
+          <div className=''>
+            &nbsp;Projects
+          </div>
+        </div>
+      </h2>
       <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} text-center flex justify-center items-center mt-2 md:mt-4`}>
-        <hr className="bg-black h-[2px] w-12 md:w-32" /><span className="text-white px-2 md:px-4">My work</span><hr className="bg-black h-[2px] w-12 md:w-32" />
+        <hr className="bg-black h-[2px] w-12 md:w-32" /><span className="text-black px-2 md:px-4">My work</span><hr className="bg-black h-[2px] w-12 md:w-32" />
       </div>
       {/* </motion.div> */}
 
       <div className='w-full flex justify-center'>
         <div data-aos="flip-left"
-          className='mt-3 text-secondary text-[16px] md:text-[20px] max-w-3xl leading-[30px] text-justify'
+          className='mt-3 text-[#9D9D9D] text-[16px] md:text-[20px] max-w-3xl leading-[30px] text-justify'
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
@@ -106,9 +117,41 @@ const Works = () => {
         </div>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
+      <div className='mt-20 flex flex-col gap-10'>
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          // <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <div className={`rounded-3xl flex ${project.bg} px-16 gap-10 h-[380px] text-white ${index % 2 === 1 ? 'flex-row-reverse' : ''} `}>
+            <div className="w-full flex flex-col gap-10 justify-center">
+              <div className="text-white text-[40px] font-bold">
+                <span>{project.name}</span> <br />
+                <span className="text-[20px]">{project.short}</span>
+              </div>
+              <div className="flex gap-12" >
+                <button onClick={() => window.open(project.live_project_link, "_blank")} className="p-2 px-4 rounded-lg flex items-center justify-center gap-2 border shadow-md shadow-white">
+                  <img
+                    src={launch}
+                    alt='source code'
+                    className='w-8 h-8 object-contain'
+                  />
+                  Live
+                </button>
+                <button onClick={() => window.open(project.source_code_link, "_blank")} className="p-2 px-4 rounded-lg flex items-center justify-center gap-2 border shadow-md shadow-white">
+                  <img
+                    src={github}
+                    alt='source code'
+                    className='w-8 h-8 object-contain'
+                  />
+                  Code
+                </button>
+              </div>
+              <div>
+                <span className="hover:underline cursor-pointer">See Project Details</span>
+              </div>
+            </div>
+            <div className="w-full flex items-center justify-center">
+              <img src={project.image} alt="Img" className="rounded-lg" />
+            </div>
+          </div>
         ))}
       </div>
     </>

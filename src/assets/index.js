@@ -12,7 +12,7 @@ import mobilePhone from "./contact/mobile.svg";
 import call from "./contact/call.png";
 import email from "./contact/email.png";
 import linkedin from "./contact/linkedin.png";
-import gitBlack from "./contact/github.png";
+import gitBlack from "./contact/gitHub.png";
 // import mobile from "./contact/mobile.svg";
 
 import css from "./tech/css.png";
@@ -50,9 +50,13 @@ import airbnb from "./airbnb.png";
 import whatsapp from "./whatsapp.png";
 import whatsApp from "./whatsApp.png";
 
-import coding from "./lotties/coding.json"
-import build from "./lotties/build.json"
-import contact from "./lotties/contact.json"
+import coding from "./lotties/coding.json";
+import build from "./lotties/build.json";
+import contact from "./lotties/contact.json";
+
+import computer from "./computer.svg";
+import midGithub from "./midGitHub.svg";
+import midLinkedIn from "./midLinkedIn.svg";
 
 export {
   logo,
@@ -105,4 +109,7 @@ export {
   airbnb,
   whatsapp,
   whatsApp,
+  computer,
+  midGithub,
+  midLinkedIn
 };

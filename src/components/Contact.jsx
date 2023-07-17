@@ -8,7 +8,7 @@ import { styles } from "../styles";
 // import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import { coding, build, contact, mail, call, linkedin, github } from "../assets/index.js";
+import { coding, build, contact, mail, call, linkedin, github, gitHub, gitBlack } from "../assets/index.js";
 import { contactInfo } from "../constants";
 
 const Contact = () => {
@@ -92,12 +92,23 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("left", "between", 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 pt-6 rounded-2xl'
+        className='flex-[0.75] bg-[#F6F6F6] p-8 pt-6 rounded-2xl'
       >
-        <h3 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={styles.sectionHeadText}>Contact Me</h3>
+        <h3 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText} flex`}>
+          {/* Contact Me */}
+          <div className="flex mx-auto">
+            <div>
+              Contact
+              <div className='h-6 bg-[#FFBE62] -mt-9' />
+            </div>
+            <div className=''>
+              &nbsp;Me
+            </div>
+          </div>
+        </h3>
         {/* <p className={styles.sectionSubText}>Get in touch</p> */}
         <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} text-center flex justify-center items-center`}>
-          <hr className="w-12 md:w-32" /><span className="px-2 md:px-4">Get in touch</span><hr className="w-12 md:w-32" />
+          <hr className="w-12 md:w-32 h-[2px] bg-black" /><span className="px-2 md:px-4 text-black">Get in touch</span><hr className="w-12 md:w-32 h-[2px] bg-black" />
         </div>
 
         <form
@@ -106,7 +117,7 @@ const Contact = () => {
           className='mt-9 flex flex-col gap-7'
         >
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Name</span>
+            <span className='text-[#9D9D9D] font-medium mb-4'>Your Name</span>
             <input
               type='text'
               name='name'
@@ -115,11 +126,11 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='bg-white py-4 px-6 placeholder:text-secondary text-[#9D9D9D] rounded-lg outline-none border-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+            <span className='text-[#9D9D9D] font-medium mb-4'>Your email</span>
             <input
               type='email'
               name='email'
@@ -128,11 +139,11 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email address?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='bg-white py-4 px-6 placeholder:text-secondary text-[#9D9D9D] rounded-lg outline-none border-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
+            <span className='text-[#9D9D9D] font-medium mb-4'>Your Message</span>
             <textarea
               rows={4}
               name='message'
@@ -140,13 +151,13 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder='What you want to say?'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='bg-white py-4 px-6 placeholder:text-secondary text-[#9D9D9D] rounded-lg outline-none border-none font-medium'
             />
           </label>
 
           <button
             type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            className='bg-white py-3 px-8 rounded-xl outline-none w-fit text-[#9D9D9D] font-bold shadow-md shadow-primary'
           >
             {loading ? "Sending..." : "Send"}
           </button>
@@ -160,13 +171,24 @@ const Contact = () => {
         {/* <EarthCanvas /> */}
         {/* <div className=" flex flex-col gap-16"> */}
         {/* <div className="flex"> */}
-        <div className=" md:p-[40px] rounded-[20px] p-[20px] grid gap-3 m-auto bg-black-100 text-white">
-          <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.heroSubText} text-center flex justify-center items-center`}>
-            <hr className="w-12 md:w-32" /><span className="px-2 md:px-4">Get in touch</span><hr className="w-12 md:w-32" />
+        <div className=" md:p-[40px] rounded-[20px] p-[20px] grid gap-3 m-auto bg-[#F6F6F6] text-[#9D9D9D] font-semibold">
+          <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.heroSubText} text-black text-center flex justify-center items-center`}>
+            <hr className="w-12 md:w-32 h-[2px] bg-black" /><span className="px-2 md:px-4">
+              {/* Get in touch */}
+              <div className="flex mx-auto">
+                <div>
+                  Get in&nbsp;
+                </div>
+                <div className=''>
+                  touch
+                  <div className='h-3 bg-[#FFBE62] -mt-4' />
+                </div>
+              </div>
+            </span><hr className="w-12 md:w-32 h-[2px] bg-black" />
           </div>
 
           <div className="mt-3 md:mt-5 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
-            <img src={github} alt="github" className="h-6 w-6 md:h-8 md:w-8" />
+            <img src={gitBlack} alt="github" className="h-6 w-6 md:h-8 md:w-8" />
             <a className="hover:underline" href="https://github.com/git-abhijeet" id="contact-github" target="_blank">github.com/git-abhijeet</a>
           </div>
 
