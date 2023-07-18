@@ -108,7 +108,7 @@ const services = [
     {
         title: "Back-End Dev",
         content: "Building the server-side components and functionality of a website using  Node.js.",
-        img: backend,
+        img: backendTech,
     },
     {
         title: "Web Optimization",
