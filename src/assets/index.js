@@ -34,6 +34,10 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import webDesign from "./tech/webDesign.svg";
+import frontend from "./tech/frontend.svg";
+import backendTech from "./tech/backend.svg";
+import webOpt from "./tech/webOpt.svg";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -111,5 +115,9 @@ export {
   whatsApp,
   computer,
   midGithub,
-  midLinkedIn
+  midLinkedIn,
+  webDesign,
+  frontend,
+  backendTech,
+  webOpt,
 };

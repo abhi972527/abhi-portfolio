@@ -33,7 +33,7 @@ const Navbar = () => {
   const navMenu = document.getElementById('nav-menu');
 
   window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 30) {
+    if (window.pageYOffset > 40) {
       navMenu.classList.add('shadow-lg');
     } else {
       navMenu.classList.remove('shadow-lg');

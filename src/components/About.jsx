@@ -57,7 +57,7 @@ const About = () => {
             </div>
             <div className='mx-auto'>
               Me
-              <div className='h-6 bg-[#FFBE62] -mt-9' />
+              <div className='h-4 sm:h-6 bg-[#FFBE62] -mt-5 sm:-mt-9' />
             </div>
           </div>
         </div>

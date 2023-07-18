@@ -47,26 +47,26 @@ const Hero = () => {
   return (
     // <section ref={backgroundRef} className='relative w-full min-h-screen mx-auto'>
     <section className='relative bg-[#F6F6F6] w-full min-h-screen mx-auto'>
-      <div className={`absolute inset-0 top-[120px] pt-12 mx-auto max-w-7xl flex flex-row items-start gap-0`}>
-        <div className='w-full flex flex-col gap-8'>
-          <div className='text-[#0252CD] text-[24px] font-bold'>
+      <div className={`absolute inset-0 top-[120px] pt-8 sm:pt-12 px-4 sm:px-10 mx-auto max-w-7xl flex flex-col sm:flex-row items-start gap-0`}>
+        <div className='w-full flex flex-col gap-6 sm:gap-8'>
+          <div className='text-[#0252CD] text-[18px] sm:text-[24px] font-bold'>
             Hi, I am Abhijeet
           </div>
-          <div className='text-black text-[64px] font-bold'>
+          <div className='text-black text-[42px] md:text-[48px] lg:text-[64px] font-bold'>
             <div>
               Professional
             </div>
             <div className='flex '>
               <div className=''>
                 Web Developer
-                <div className='h-6 bg-[#FFBE62] -mt-9' />
+                <div className='h-4 sm:h-6 bg-[#FFBE62] -mt-7 sm:-mt-9' />
               </div>
             </div>
           </div>
-          <div className='text-[#9D9D9D] mt-8 text-[16px] font-medium'>
+          <div className='text-[#9D9D9D] mt-8 text-[14px] text-justify sm:text-[16px] font-medium'>
             I am a passionate web developer with a knack for creating intuitive and visually stunning digital experiences. With years of experience and a deep understanding of emerging technologies, I bring a unique blend of creativity and technical expertise to every project.
           </div>
-          <div className='flex gap-14 items-center mt-8'>
+          <div className='flex flex-col sm:flex-row md:flex-col lg:flex-row gap-8 sm:gap-14 md:gap-8 lg:gap-14 items-center mt-8'>
             <Link
               activeClass="active"
               to="contact"
@@ -79,18 +79,20 @@ const Hero = () => {
                 Contact Us
               </button>
             </Link>
-            <a className="hover:underline" href="https://www.linkedin.com/in/abhijeet-kumar-0238301bb/" target="_blank" id="contact-linkedin">
-              <img src={midLinkedIn} alt="LinkedIn" className='cursor-pointer' />
-            </a>
-            <a className="hover:underline" href="https://github.com/git-abhijeet" id="contact-github" target="_blank">
-              <img src={midGithub} alt="GitHub" className='cursor-pointer' />
-            </a>
+            <div className='flex items-center justify-center gap-10'>
+              <a className="hover:underline" href="https://www.linkedin.com/in/abhijeet-kumar-0238301bb/" target="_blank" id="contact-linkedin">
+                <img src={midLinkedIn} alt="LinkedIn" className='cursor-pointer' />
+              </a>
+              <a className="hover:underline" href="https://github.com/git-abhijeet" id="contact-github" target="_blank">
+                <img src={midGithub} alt="GitHub" className='cursor-pointer' />
+              </a>
+            </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="110" height="6" viewBox="0 0 110 6" fill="none">
               <path d="M109.887 3L107 0.113249L104.113 3L107 5.88675L109.887 3ZM0 3.5H107V2.5H0V3.5Z" fill="#0252CD" />
             </svg>
           </div>
         </div>
-        <div className='w-full flex items-center justify-center'>
+        <div className='w-full hidden md:flex items-center justify-center'>
           <img src={computer} alt="" className='' />
         </div>
         {/* <div className='border' >

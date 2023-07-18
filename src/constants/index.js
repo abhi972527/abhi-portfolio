@@ -41,6 +41,10 @@ import {
     airbnb,
     whatsapp,
     whatsApp,
+    webDesign,
+    frontend,
+    backendTech,
+    webOpt,
 } from "../assets";
 
 export const navLinks = [
@@ -93,19 +97,23 @@ const services = [
     // },
     {
         title: "Web Design",
-        content: "Creating visually appealing and user-friendly websites that adapt to different screen sizes and devices."
+        content: "Creating visually appealing and user-friendly websites that adapt to different screen sizes and devices.",
+        img: webDesign,
     },
     {
         title: "Front-End Dev",
-        content: "Implementing the client-side functionality of a website using HTML, CSS, and JavaScript."
+        content: "Implementing the client-side functionality of a website using HTML, CSS, and JavaScript.",
+        img: frontend,
     },
     {
         title: "Back-End Dev",
-        content: "Building the server-side components and functionality of a website using  Node.js."
+        content: "Building the server-side components and functionality of a website using  Node.js.",
+        img: backend,
     },
     {
         title: "Web Optimization",
-        content: "Improving website performance by optimizing page load times, and minimizing resource usage."
+        content: "Improving website performance by optimizing page load times, and minimizing resource usage.",
+        img: webOpt,
     }
 ];
 

@@ -99,7 +99,7 @@ const Contact = () => {
           <div className="flex mx-auto">
             <div>
               Contact
-              <div className='h-6 bg-[#FFBE62] -mt-9' />
+              <div className='h-3 sm:h-6 bg-[#FFBE62] -mt-5 sm:-mt-9' />
             </div>
             <div className=''>
               &nbsp;Me
@@ -181,7 +181,7 @@ const Contact = () => {
                 </div>
                 <div className=''>
                   touch
-                  <div className='h-3 bg-[#FFBE62] -mt-4' />
+                  <div className='h-2 sm:h-3 bg-[#FFBE62] -mt-3 sm:-mt-4' />
                 </div>
               </div>
             </span><hr className="w-12 md:w-32 h-[2px] bg-black" />
