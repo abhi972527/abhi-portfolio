@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { css } from '@emotion/react';
-// import { Link } from 'react-router-dom';
-import { motion } from "framer-motion";
 import { Link, Element } from 'react-scroll';
 import AOS from 'aos';
 
-// import "../assets/styles/hamburger.css"
 import { styles } from '../styles'
 import { navLinks } from '../constants';
 import { logo, menu, close } from '../assets';
-import { fadeIn, textVariant } from "../utils/motion";
 import "../style/hamburger.css";
 
 const Navbar = () => {
@@ -17,26 +12,13 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
-  // let sidebar = false;
-  // const toggleMenu = () => {
-  //   document.getElementById("nav-menu").style.backdropFilter = "none";
-  //   document.body.classList.toggle("open");
-  //   console.log("🚀 ~ file: Navbar.jsx:19 ~ Navbar ~ sidebar:", sidebar)
-  //   if(sidebar) {
-  //     document.getElementById("nav-menu").style.backdropFilter = "blur(8px)"
-  //   }
-  //   setSidebar(!sidebar);
-  //   // sidebar = !sidebar
-  //   // addFilter()
-  // }
-
   const navMenu = document.getElementById('nav-menu');
 
   window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 40) {
-      navMenu.classList.add('shadow-lg');
+    if (window.pageYOffset > 50) {
+      navMenu.classList.add('shadow-md');
     } else {
-      navMenu.classList.remove('shadow-lg');
+      navMenu.classList.remove('shadow-md');
     }
   });
 
@@ -52,28 +34,6 @@ const Navbar = () => {
     setSidebar(!sidebar);
   };
 
-  // const animationStyles = css`
-  //   @keyframes fadeLeft {
-  //     from {
-  //       opacity: 0;
-  //       transform: translateX(-20px);
-  //     }
-  //     to {
-  //       opacity: 1;
-  //       transform: translateX(0);
-  //     }
-  //   }
-  // `;
-
-  // let temp = 0;
-  // const addFilter = () => {
-  //   console.log("🚀 ~ file: Navbar.jsx:25 ~ Navbar ~ temp:", temp)
-  //   temp++;
-  //   if (temp % 2 === 0) {
-  //     document.getElementById("nav-menu").style.backdropFilter = "blur(8px)"
-  //   }
-  // }
-
   const handleSetActive = (title) => {
     setActive(title);
   };
@@ -87,8 +47,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav id='nav-menu' className={`${styles.paddingX} bg-[#F6F6F6] w-full flex items-center p-4 lg:py-5 fixed top-0 z-10 duration-300 shadow-lg`}>
-      <div className='w-full flex flex-row-reverse lg:flex-row justify-between items-center max-w-7xl mx-auto'>
+    <nav id='nav-menu' className={`px-6 lg:px-12 xl:px-14 bg-[#F6F6F6] w-full flex items-center p-4 lg:py-5 fixed top-0 z-10 duration-300 shadow-md`}>
+      <div className='w-full flex flex-row-reverse lg:flex-row justify-between items-center max-w-full mx-auto'>
         < Link
           to="/"
           className='flex items-center gap-2'

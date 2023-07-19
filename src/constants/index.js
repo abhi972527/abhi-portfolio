@@ -197,7 +197,7 @@ const experiences = [
         title: "Internship",
         company_name: "Masai",
         icon: masai,
-        iconBg: "#383E56",
+        iconBg: "#E6DEDD",
         date: "July 2021 - March 2022",
         points: [
             "Created multiple clones of different web application.",
@@ -297,13 +297,34 @@ const projects = [
         image: filmstudio,
         source_code_link: "https://github.com/git-abhijeet/Filmpire",
         live_project_link: "https://abhi-filmpire.netlify.app",
+        showCase: {
+            techStack: [reactjs, nodejs, typescript],
+            description: "Jobit is a web-based application for job posting that my team and I created using React and JSearch API. Our platform connects developers with millions of job opportunities for free. Through Jobit, developers can easily search for job postings according to their preferred location, employment type, level, and salary range. The application provides in-depth information about the job postings, including company details, job requirements, and responsibilities. Users can also explore job openings from specific companies and other similar companies based on their search criteria. Moreover, we incorporated a salary estimate feature and included the option to switch between light and dark themes for user convenience.",
+            problemStatement: "One of the main problems that people face when looking to rent a car is the hassle of finding a reliable and user-friendly platform to search for and book rental cars. In addition, car owners who want to rent out their vehicles often struggle to find a suitable platform to list their cars and manage their rentals.",
+            img: {
+                first: null,
+                second: null,
+                third: null,
+            },
+            learnings: [
+                "Gained extensive knowledge of full authentication and authorization implementation, including the use of industry-standard security protocols such as JSON Web Tokens (JWT).",
+                "Sharpened my backend skills, specifically in optimizing database queries, improving performance, and handling server-side logic.",
+                "Learned how to properly handle files, including file upload, storage, and retrieval, ensuring that the app's data is organized and easily accessible while keeping it secure.",
+                "Acquired proficiency in NextJS and implemented various features utilizing industry-standard best practices."
+            ],
+            challenges: [
+                "As we developed Morent, our team encountered various obstacles. One of our biggest challenges was choosing the right tools and technologies for the project. ",
+                "We conducted brainstorming and carefully weighed our options before making a decision. Furthermore, using NextJS was a new experience for us, and we encountered difficulties while implementing its features. Finally, we had to work under time constraints, which added pressure to the project. ",
+                "However, we collaborated effectively to overcome these obstacles and ultimately delivered a high-quality product within the given timeline.",
+            ]
+        }
     },
     {
         name: "AirBnb (Clone)",
         short: "A House Rent Application",
         bg: "bg-[#56B0B9]",
         description:
-            "Inspired by the popular Airbnb platform, this web-based Airbnb clone project allows users to rent, explore and book a wide range of accommodations, including apartments, houses, villas, and more providing users with a unique and personalized accommodation booking experience.",
+            "Inspired by the popular Airbnb platform, this web-based Airbnb clone project allows users to explore and book a wide range of accommodations, including houses, villas, and more providing users with a personalized booking experience.",
         // "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
         tags: [
             {
@@ -322,6 +343,9 @@ const projects = [
         image: airbnb,
         source_code_link: "https://github.com/git-abhijeet/airbnb_clone",
         live_project_link: "https://airbnb-clone-practice-project.vercel.app",
+        showCase: {
+
+        }
     },
     {
         name: "WhatsApp (Clone)",
@@ -347,6 +371,9 @@ const projects = [
         image: whatsapp,
         source_code_link: "https://github.com/git-abhijeet/whatsApp_clone",
         live_project_link: "https://whats-app-clone-delta.vercel.app",
+        showCase: {
+
+        }
     },
 ];
 

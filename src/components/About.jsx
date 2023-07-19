@@ -1,41 +1,11 @@
 import React, { useEffect } from "react";
-import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 import AOS from 'aos';
 import TypewriterComponent from "typewriter-effect";
 
 import { styles } from "../styles";
-import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-
-// const ServiceCard = ({ index, title, icon }) => (
-//   <Tilt className='xs:w-[250px] w-full'>
-//     <motion.div
-//       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-//       className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-//     >
-//       <div
-//         options={{
-//           max: 45,
-//           scale: 1,
-//           speed: 450,
-//         }}
-//         className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-//       >
-//         <img
-//           src={icon}
-//           alt='web-development'
-//           className='w-16 h-16 object-contain'
-//         />
-
-//         <h3 className='text-white text-[20px] font-bold text-center'>
-//           {title}
-//         </h3>
-//       </div>
-//     </motion.div>
-//   </Tilt>
-// );
 
 const About = () => {
 
@@ -48,7 +18,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="w-full mb-12 md:mb-0">
+    <section className="w-full mb-12 md:mb-24 ">
       <div className="">
         <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText} text-[#151E2C] flex mt-0 md:mt-8`}>
           <div className="flex mx-auto">
@@ -84,7 +54,8 @@ const About = () => {
                 }}
               />
             </div>
-            <div data-aos="zoom-in" data-aos-anchor-placement="center-bottom" className="text-justify text-[#6F74A7]">
+            {/* <div data-aos="zoom-in" data-aos-anchor-placement="center-bottom" className="text-justify text-[#6F74A7]"> */}
+            <div className="text-justify mt-12 text-[#6F74A7]">
               I'm a skilled software developer with experience in
               JavaScript, and expertise in frameworks like React, Vue, Node.js, and
               Three.js. I'm a quick learner, capable of writing production-ready code and collaborate closely with clients to

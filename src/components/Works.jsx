@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
@@ -10,6 +10,7 @@ import { github, launch } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import ProjectShowcase from "./ProjectShowcase";
 
 const ProjectCard = ({
   index,
@@ -63,7 +64,7 @@ const ProjectCard = ({
       </div>
 
       <div className="flex gap-12 justify-between mt-4" >
-        <button onClick={() => window.open(project.live_project_link, "_blank")} className="p-2 px-4 rounded-lg flex items-center justify-center gap-2 border text-white font-bold shadow-md shadow-white">
+        <button onClick={() => window.open(project.live_project_link, "_blank")} className="p-2 px-4 rounded-full flex items-center justify-center gap-2 border text-white font-bold shadow-sm shadow-white">
           <div className='black-gradient w-6 h-6 rounded-full flex justify-center items-center cursor-pointer'>
             <img
               src={launch}
@@ -73,7 +74,7 @@ const ProjectCard = ({
           </div>
           Live
         </button>
-        <button onClick={() => window.open(project.source_code_link, "_blank")} className="p-2 px-4 rounded-lg flex items-center justify-center gap-2 border text-white font-bold shadow-md shadow-white">
+        <button onClick={() => window.open(project.source_code_link, "_blank")} className="p-2 px-4 rounded-full flex items-center justify-center gap-2 border text-white font-bold shadow-sm shadow-white">
           <div className='black-gradient w-6 h-6 rounded-full flex justify-center items-center cursor-pointer'>
             <img
               src={github}
@@ -106,6 +107,14 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const [projectShowcase, setProjectShowcase] = useState(false);
+  const [project, setProject] = useState(null);
+
+  const toggleProjectShowcase = (projectData) => {
+    console.log("button clicked", projectData);
+    setProject(projectData);
+    setProjectShowcase(!projectShowcase);
+  };
 
   useEffect(() => {
     AOS.init({
@@ -135,10 +144,8 @@ const Works = () => {
       </div>
       {/* </motion.div> */}
 
-      <div className='w-full flex justify-center'>
-        <div data-aos="flip-left"
-          className='mt-3 text-[#9D9D9D] text-[16px] md:text-[20px] max-w-3xl leading-[30px] text-justify'
-        >
+      <div className='w-full flex justify-center mt-4'>
+        <div className='mt-3 text-[#9D9D9D] text-[16px] md:text-[20px] max-w-3xl leading-[30px] text-justify'>
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
           links to code repositories and live demos in it. It reflects my
@@ -154,14 +161,15 @@ const Works = () => {
               <ProjectCard key={`project-${index}`} index={index} {...project} />
             </div>
 
-            <div className={`rounded-3xl hidden  md:flex ${project.bg} px-6 lg:px-16 gap-10 h-[280px] lg:h-[380px] text-white ${index % 2 === 1 ? 'flex-row-reverse' : ''} `}>
-              <div className="w-full flex flex-col gap-6 lg:gap-10 justify-center">
-                <div className="text-white text-[28px] lg:text-[40px] font-bold">
-                  <span>{project.name}</span> <br />
-                  <span className="text-[16px] lg:text-[20px]">{project.short}</span>
+            <div className={`rounded-3xl hidden  md:flex ${project.bg} px-6 lg:px-10 gap-10 h-[280px] lg:h-[320px] xl:h-[360px] text-white ${index % 2 === 1 ? 'flex-row-reverse' : ''} `}>
+              <div className="w-full flex flex-col gap-4 lg:gap-6 xl:gap-8 justify-center">
+                <div className="text-white text-[28px] lg:text-[36px] xl:text-[40px] font-bold">
+                  <div>{project.name}</div>
+                  {/* <span className="text-[16px] lg:text-[18px] xl:text-[20px]">{project.short}</span> */}
+                  <div className="text-[12px] lg:text-[14px] leading-[16px] lg:leading-[18px] font-normal text-justify xl:text-[14px]">{project.description}</div>
                 </div>
                 <div className="flex gap-12" >
-                  <button onClick={() => window.open(project.live_project_link, "_blank")} className="p-2 px-4 rounded-lg flex items-center justify-center gap-2 border font-bold shadow-md shadow-white">
+                  <button onClick={() => window.open(project.live_project_link, "_blank")} className="p-2 px-4 rounded-full flex items-center justify-center gap-2 border font-bold shadow-sm shadow-white transition-transform duration-300 ease-out hover:scale-105">
                     <img
                       src={launch}
                       alt='source code'
@@ -169,7 +177,7 @@ const Works = () => {
                     />
                     Live
                   </button>
-                  <button onClick={() => window.open(project.source_code_link, "_blank")} className="p-2 px-4 rounded-lg flex items-center justify-center gap-2 border font-bold shadow-md shadow-white">
+                  <button onClick={() => window.open(project.source_code_link, "_blank")} className="p-2 px-4 rounded-full flex items-center justify-center gap-2 border font-bold shadow-sm shadow-white transition-transform duration-300 ease-out hover:scale-105">
                     <img
                       src={github}
                       alt='source code'
@@ -178,17 +186,23 @@ const Works = () => {
                     Code
                   </button>
                 </div>
-                <div>
-                  <span className="hover:underline cursor-pointer font-bold">See Project Details</span>
+                <div className="flex">
+                  <span className=" flex group items-center cursor-pointer gap-6">
+                    <span className="hover:underline text-[14px] font-bold" onClick={() => toggleProjectShowcase(project)}>See Project Details</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="8" viewBox="0 0 36 8" fill="none" className="transition-transform duration-300 ease-out group-hover:translate-x-6">
+                      <path d="M35.3536 4.35356C35.5488 4.15829 35.5488 3.84171 35.3536 3.64645L32.1716 0.464469C31.9763 0.269207 31.6597 0.269207 31.4645 0.464469C31.2692 0.659731 31.2692 0.976313 31.4645 1.17158L34.2929 4L31.4645 6.82843C31.2692 7.02369 31.2692 7.34027 31.4645 7.53554C31.6597 7.7308 31.9763 7.7308 32.1716 7.53554L35.3536 4.35356ZM-4.37114e-08 4.5L35 4.5L35 3.5L4.37114e-08 3.5L-4.37114e-08 4.5Z" fill="white" />
+                    </svg>
+                  </span>
                 </div>
               </div>
               <div className="w-full flex items-center justify-center">
-                <img src={project.image} alt="Img" className="rounded-lg border" />
+                <img src={project.image} alt="Img" className="rounded-2xl transition-transform duration-300 ease-out hover:scale-105" />
               </div>
             </div>
           </div>
         ))}
       </div>
+      {/* {projectShowcase && <ProjectShowcase project={project} />} */}
     </>
   );
 };

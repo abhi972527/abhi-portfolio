@@ -157,7 +157,7 @@ const Contact = () => {
 
           <button
             type='submit'
-            className='bg-white py-3 px-8 rounded-xl outline-none w-fit text-[#9D9D9D] font-bold shadow-md shadow-primary'
+            className='bg-white py-3 px-8 rounded-full outline-none w-fit text-[#9D9D9D] font-bold border border-white shadow-sm shadow-primary transition-transform duration-300 ease-out hover:scale-105'
           >
             {loading ? "Sending..." : "Send"}
           </button>
@@ -168,13 +168,9 @@ const Contact = () => {
         variants={slideIn("right", "between", 0.2, 1)}
         className='xl:flex-1 xl:h-auto md:h-[550px] flex justify-center'
       >
-        {/* <EarthCanvas /> */}
-        {/* <div className=" flex flex-col gap-16"> */}
-        {/* <div className="flex"> */}
         <div className=" md:p-[40px] rounded-[20px] p-[20px] grid gap-3 m-auto bg-[#F6F6F6] text-[#9D9D9D] font-semibold">
           <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.heroSubText} text-black text-center flex justify-center items-center`}>
             <hr className="w-12 md:w-32 h-[2px] bg-black" /><span className="px-2 md:px-4">
-              {/* Get in touch */}
               <div className="flex mx-auto">
                 <div>
                   Get in&nbsp;
@@ -187,18 +183,18 @@ const Contact = () => {
             </span><hr className="w-12 md:w-32 h-[2px] bg-black" />
           </div>
 
-          <div className="mt-3 md:mt-5 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
-            <img src={gitBlack} alt="github" className="h-6 w-6 md:h-8 md:w-8" />
+          <div className="mt-3 md:mt-5 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center transition-transform duration-300 ease-out hover:scale-105">
+            <img src={gitBlack} alt="github" className="h-5 w-5 md:h-6 md:w-6" />
             <a className="hover:underline" href="https://github.com/git-abhijeet" id="contact-github" target="_blank">github.com/git-abhijeet</a>
           </div>
 
-          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
-            <img src={linkedin} alt="linkedin" className="h-6 w-6 md:h-8 md:w-8" />
+          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center transition-transform duration-300 ease-out hover:scale-105">
+            <img src={linkedin} alt="linkedin" className="h-5 w-5 md:h-6 md:w-6" />
             <a className="hover:underline" href="https://www.linkedin.com/in/abhijeet-kumar-0238301bb/" target="_blank" id="contact-linkedin">linkedin.com/in/abhijeet-kumar</a>
           </div>
 
-          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
-            <img src={mail} alt="mail" className="h-6 w-6 md:h-8 md:w-8" />
+          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center transition-transform duration-300 ease-out hover:scale-105">
+            <img src={mail} alt="mail" className="h-5 w-5 md:h-6 md:w-6" />
             <p id="contact-email">
               <a className="hover:underline" href="mailto:abhijeet.kr.chaurasiya@gmail.com">
                 abhijeet.kr.chaurasiya@gmail.com
@@ -206,8 +202,8 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
-            <img src={call} alt="call" className="h-6 w-6 md:h-8 md:w-8" />
+          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center transition-transform duration-300 ease-out hover:scale-105">
+            <img src={call} alt="call" className="h-5 w-5 md:h-6 md:w-6" />
             <span id="contact-phone">
               <a className="hover:underline" href="tel:+919835882844">
                 +91 9835-882-844
@@ -215,8 +211,6 @@ const Contact = () => {
             </span>
           </div>
         </div>
-        {/* </div> */}
-        {/* </div> */}
       </motion.div>
     </div>
   );
