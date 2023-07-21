@@ -25,40 +25,18 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className={`p-5 rounded-2xl sm:w-[360px] w-full ${bg}`}>
-      <div className='relative w-full h-[230px]'>
+      <div className='relative w-full'>
         <img
           src={image}
           alt='project_image'
-          className='w-full h-full object-cover rounded-2xl'
+          className='object-cover w-full mx-auto rounded-2xl'
         />
-        {/* <div className='absolute inset-0 flex justify-between m-2 card-img_hover'>
-          <div
-            onClick={() => window.open(live_project_link, "_blank")}
-            className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-          >
-            <img
-              src={launch}
-              alt='source code'
-              className='w-3/4 h-3/4 object-contain'
-            />
-          </div>
-          <div
-            onClick={() => window.open(source_code_link, "_blank")}
-            className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-          >
-            <img
-              src={github}
-              alt='source code'
-              className='w-3/4 h-3/4 object-contain'
-            />
-          </div>
-        </div> */}
       </div>
 
       <div className='mt-5'>
         <div className="flex justify-between items-center" >
           <h3 onClick={() => window.open(live_project_link, "_blank")} className='text-white font-bold text-[24px] cursor-pointer'>{name}</h3>
-          {/* <h1 className="cursor-pointer font-bold text-[16px]">More Info</h1> */}
+          <h1 className="cursor-pointer font-bold text-[16px]">More Info</h1>
         </div>
         <p className='mt-2 text-white text-justify text-[14px]'>{short}</p>
       </div>
