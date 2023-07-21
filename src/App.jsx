@@ -31,12 +31,14 @@ const App = () => {
         </div>
         <Created />
       </div> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/filmstudio" element={<FilmStudio />} />
         <Route path="/airbnb" element={<Airbnb />} />
         <Route path="/whatsapp" element={<Whatsapp />} />
       </Routes>
+      <Created />
     </BrowserRouter>
   );
 };

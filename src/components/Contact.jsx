@@ -94,7 +94,8 @@ const Contact = () => {
         variants={slideIn("left", "between", 0.2, 1)}
         className='flex-[0.75] bg-[#F6F6F6] p-8 pt-6 rounded-2xl'
       >
-        <h3 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText} flex`}>
+        {/* <h3 data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.sectionHeadText} flex`}> */}
+        <h3 className={`${styles.sectionHeadText} flex`}>
           {/* Contact Me */}
           <div className="flex mx-auto">
             <div>
@@ -107,7 +108,8 @@ const Contact = () => {
           </div>
         </h3>
         {/* <p className={styles.sectionSubText}>Get in touch</p> */}
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} text-center flex justify-center items-center`}>
+        {/* <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={`${styles.sectionSubText} text-center flex justify-center items-center`}> */}
+        <div className={`${styles.sectionSubText} text-center flex justify-center items-center`}>
           <hr className="w-12 md:w-32 h-[2px] bg-black" /><span className="px-2 md:px-4 text-black">Get in touch</span><hr className="w-12 md:w-32 h-[2px] bg-black" />
         </div>
 
@@ -169,7 +171,8 @@ const Contact = () => {
         className='xl:flex-1 xl:h-auto md:h-[550px] flex justify-center'
       >
         <div className=" md:p-[40px] rounded-[20px] p-[20px] grid gap-3 m-auto bg-[#F6F6F6] text-[#9D9D9D] font-semibold">
-          <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.heroSubText} text-black text-center flex justify-center items-center`}>
+          {/* <div data-aos="fade-down" data-aos-anchor-placement="center-bottom" className={`${styles.heroSubText} text-black text-center flex justify-center items-center`}> */}
+          <div className={`${styles.heroSubText} text-black text-center flex justify-center items-center`}>
             <hr className="w-12 md:w-32 h-[2px] bg-black" /><span className="px-2 md:px-4">
               <div className="flex mx-auto">
                 <div>
@@ -183,18 +186,24 @@ const Contact = () => {
             </span><hr className="w-12 md:w-32 h-[2px] bg-black" />
           </div>
 
-          <div className="mt-3 md:mt-5 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center transition-transform duration-300 ease-out hover:scale-105">
-            <img src={gitBlack} alt="github" className="h-5 w-5 md:h-6 md:w-6" />
+          <div className="mt-3 md:mt-5 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
+            <a className="hover:underline" href="https://github.com/git-abhijeet" id="contact-github" target="_blank">
+              <img src={gitBlack} alt="github" className="h-5 w-5 md:h-6 md:w-6" />
+            </a>
             <a className="hover:underline" href="https://github.com/git-abhijeet" id="contact-github" target="_blank">github.com/git-abhijeet</a>
           </div>
 
-          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center transition-transform duration-300 ease-out hover:scale-105">
-            <img src={linkedin} alt="linkedin" className="h-5 w-5 md:h-6 md:w-6" />
+          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
+            <a className="hover:underline" href="https://www.linkedin.com/in/abhijeet-kumar-0238301bb/" target="_blank" id="contact-linkedin">
+              <img src={linkedin} alt="linkedin" className="h-5 w-5 md:h-6 md:w-6" />
+            </a>
             <a className="hover:underline" href="https://www.linkedin.com/in/abhijeet-kumar-0238301bb/" target="_blank" id="contact-linkedin">linkedin.com/in/abhijeet-kumar</a>
           </div>
 
-          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center transition-transform duration-300 ease-out hover:scale-105">
-            <img src={mail} alt="mail" className="h-5 w-5 md:h-6 md:w-6" />
+          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
+            <a className="hover:underline" href="mailto:abhijeet.kr.chaurasiya@gmail.com">
+              <img src={mail} alt="mail" className="h-5 w-5 md:h-6 md:w-6" />
+            </a>
             <p id="contact-email">
               <a className="hover:underline" href="mailto:abhijeet.kr.chaurasiya@gmail.com">
                 abhijeet.kr.chaurasiya@gmail.com
@@ -202,8 +211,10 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center transition-transform duration-300 ease-out hover:scale-105">
-            <img src={call} alt="call" className="h-5 w-5 md:h-6 md:w-6" />
+          <div className="mt-2 md:mt-4 flex  gap-3 md:gap-7 text-[14px] md:text-[18px] items-center">
+            <a className="hover:underline" href="tel:+919835882844">
+              <img src={call} alt="call" className="h-5 w-5 md:h-6 md:w-6" />
+            </a>
             <span id="contact-phone">
               <a className="hover:underline" href="tel:+919835882844">
                 +91 9835-882-844

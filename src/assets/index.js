@@ -49,9 +49,9 @@ import blowhorn from "./company/blowhorn.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
-import filmstudio from "./filmstudio.png";
-import airbnb from "./airbnb.png";
-import whatsapp from "./whatsapp.png";
+import filmstudio from "./project/filmstudio.png";
+import airbnb from "./project/airbnb.png";
+import whatsapp from "./project/whatsapp.png";
 import whatsApp from "./whatsApp.png";
 
 import coding from "./lotties/coding.json";
@@ -61,6 +61,40 @@ import contact from "./lotties/contact.json";
 import computer from "./computer.svg";
 import midGithub from "./midGitHub.svg";
 import midLinkedIn from "./midLinkedIn.svg";
+
+import defination from "./project/defination.png";
+import delivery from "./project/delivery.png";
+import development from "./project/development.png";
+import planning from "./project/planning.png";
+import developmentProcess from "./project/developmentProcess.png";
+import airbnb1 from "./project/airbnb1.png";
+import airbnb2 from "./project/airbnb2.png";
+import airbnb3 from "./project/airbnb3.png";
+import airbnb4 from "./project/airbnb4.png";
+import airbnb5 from "./project/airbnb5.png";
+import airbnb6 from "./project/airbnb6.png";
+import airbnb7 from "./project/airbnb7.png";
+import airbnbmob1 from "./project/airbnbmob1.png";
+import airbnbmob2 from "./project/airbnbmob2.png";
+import airbnbmob3 from "./project/airbnbmob3.png";
+import airbnbmob4 from "./project/airbnbmob4.png";
+import airbnbmob5 from "./project/airbnbmob5.png";
+import filmstudio1 from "./project/filmstudio1.png";
+import filmstudio2 from "./project/filmstudio2.png";
+import filmstudio3 from "./project/filmstudio3.png";
+import filmstudio4 from "./project/filmstudio.png";
+import filmstudiomob1 from "./project/filmstudiomob1.png";
+import filmstudiomob2 from "./project/filmstudiomob2.png";
+import filmstudiomob3 from "./project/filmstudiomob3.png";
+import filmstudiomob4 from "./project/filmstudiomob4.png";
+import whatsapp1 from "./project/whatsapp1.png";
+import whatsapp2 from "./project/whatsapp2.png";
+import whatsapp3 from "./project/whatsapp3.png";
+import whatsapp4 from "./project/whatsapp4.png";
+import whatsapp5 from "./project/whatsapp5.png";
+import whatsappmob1 from "./project/whatsappmob1.png";
+import whatsappmob2 from "./project/whatsappmob2.png";
+
 
 export {
   logo,
@@ -120,4 +154,36 @@ export {
   frontend,
   backendTech,
   webOpt,
+  defination,
+  development,
+  planning,
+  delivery,
+  developmentProcess,
+  airbnb1,
+  airbnb2,
+  airbnb3,
+  airbnb4,
+  airbnb5,
+  airbnb6,
+  airbnb7,
+  airbnbmob1,
+  airbnbmob2,
+  airbnbmob3,
+  airbnbmob4,
+  airbnbmob5,
+  filmstudio1,
+  filmstudio2,
+  filmstudio3,
+  filmstudio4,
+  filmstudiomob1,
+  filmstudiomob2,
+  filmstudiomob3,
+  filmstudiomob4,
+  whatsapp1,
+  whatsapp2,
+  whatsapp3,
+  whatsapp4,
+  whatsapp5,
+  whatsappmob1,
+  whatsappmob2,
 };

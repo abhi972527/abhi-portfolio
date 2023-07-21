@@ -29,7 +29,7 @@ const ProjectCard = ({
         <img
           src={image}
           alt='project_image'
-          className='w-full h-full object-cover rounded-2xl border'
+          className='w-full h-full object-cover rounded-2xl'
         />
         {/* <div className='absolute inset-0 flex justify-between m-2 card-img_hover'>
           <div
@@ -196,7 +196,7 @@ const Works = () => {
                 </div>
               </div>
               <div className="w-full flex items-center justify-center">
-                <img src={project.image} alt="Img" className="rounded-2xl transition-transform duration-300 ease-out hover:scale-105" />
+                <img onClick={() => window.open(project.live_project_link, "_blank")} src={project.image} alt="Img" className="rounded-2xl cursor-pointer transition-transform duration-300 ease-out hover:scale-105" />
               </div>
             </div>
           </div>

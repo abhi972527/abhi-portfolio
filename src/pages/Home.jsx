@@ -4,7 +4,7 @@ import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, Stars
 const Home = () => {
     return (
         <div className="relative z-0 bg-white">
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="">
                 <Hero />
             </div>
@@ -27,7 +27,7 @@ const Home = () => {
                 <Contact />
                 {/* <StarsCanvas /> */}
             </div>
-            <Created />
+            {/* <Created /> */}
         </div>
     )
 }
