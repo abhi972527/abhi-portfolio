@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 
 
@@ -21,8 +22,14 @@ const ProjectCard = ({
   image,
   bg,
   source_code_link,
-  live_project_link
+  live_project_link,
+  showcasePage,
 }) => {
+  const navigate = useNavigate();
+
+  const toggleProjectShowcase = (data) => {
+    navigate(`${data}`)
+  };
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className={`p-5 rounded-2xl sm:w-[360px] w-full ${bg}`}>
       <div className='relative w-full'>
@@ -30,19 +37,20 @@ const ProjectCard = ({
           src={image}
           alt='project_image'
           className='object-cover w-full mx-auto rounded-2xl'
+          onClick={() => window.open(live_project_link, "_blank")}
         />
       </div>
 
       <div className='mt-5'>
         <div className="flex justify-between items-center" >
           <h3 onClick={() => window.open(live_project_link, "_blank")} className='text-white font-bold text-[24px] cursor-pointer'>{name}</h3>
-          <h1 className="cursor-pointer font-bold text-[16px]">More Info</h1>
+          {/* <h1 className="cursor-pointer font-bold text-[16px]">More Info</h1> */}
         </div>
         <p className='mt-2 text-white text-justify text-[14px]'>{short}</p>
       </div>
 
       <div className="flex gap-12 justify-between mt-4" >
-        <button onClick={() => window.open(project.live_project_link, "_blank")} className="p-2 px-4 rounded-full flex items-center justify-center gap-2 border text-white font-bold shadow-sm shadow-white">
+        <button onClick={() => window.open(live_project_link, "_blank")} className="p-2 px-4 rounded-full flex items-center justify-center gap-2 border text-white font-bold shadow-sm shadow-white">
           <div className='black-gradient w-6 h-6 rounded-full flex justify-center items-center cursor-pointer'>
             <img
               src={launch}
@@ -52,7 +60,7 @@ const ProjectCard = ({
           </div>
           Live
         </button>
-        <button onClick={() => window.open(project.source_code_link, "_blank")} className="p-2 px-4 rounded-full flex items-center justify-center gap-2 border text-white font-bold shadow-sm shadow-white">
+        <button onClick={() => window.open(source_code_link, "_blank")} className="p-2 px-4 rounded-full flex items-center justify-center gap-2 border text-white font-bold shadow-sm shadow-white">
           <div className='black-gradient w-6 h-6 rounded-full flex justify-center items-center cursor-pointer'>
             <img
               src={github}
@@ -65,7 +73,7 @@ const ProjectCard = ({
       </div>
 
       <div className="mt-6">
-        <span className="hover:underline cursor-pointer text-white font-bold">See Project Details</span>
+        <span onClick={() => toggleProjectShowcase(showcasePage)} className="hover:underline cursor-pointer text-white font-bold">See Project Details</span>
       </div>
 
       <div className='mt-2 flex flex-wrap gap-2'>
@@ -88,10 +96,10 @@ const Works = () => {
   const [projectShowcase, setProjectShowcase] = useState(false);
   const [project, setProject] = useState(null);
 
+  const navigate = useNavigate();
+
   const toggleProjectShowcase = (projectData) => {
-    console.log("button clicked", projectData);
-    setProject(projectData);
-    setProjectShowcase(!projectShowcase);
+    navigate(`${projectData.showcasePage}`)
   };
 
   useEffect(() => {
@@ -165,8 +173,8 @@ const Works = () => {
                   </button>
                 </div>
                 <div className="flex">
-                  <span className=" flex group items-center cursor-pointer gap-6">
-                    <span className="hover:underline text-[14px] font-bold" onClick={() => toggleProjectShowcase(project)}>See Project Details</span>
+                  <span onClick={() => toggleProjectShowcase(project)} className="flex group items-center cursor-pointer gap-6">
+                    <span className="hover:underline text-[14px] font-bold">See Project Details</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="8" viewBox="0 0 36 8" fill="none" className="transition-transform duration-300 ease-out group-hover:translate-x-6">
                       <path d="M35.3536 4.35356C35.5488 4.15829 35.5488 3.84171 35.3536 3.64645L32.1716 0.464469C31.9763 0.269207 31.6597 0.269207 31.4645 0.464469C31.2692 0.659731 31.2692 0.976313 31.4645 1.17158L34.2929 4L31.4645 6.82843C31.2692 7.02369 31.2692 7.34027 31.4645 7.53554C31.6597 7.7308 31.9763 7.7308 32.1716 7.53554L35.3536 4.35356ZM-4.37114e-08 4.5L35 4.5L35 3.5L4.37114e-08 3.5L-4.37114e-08 4.5Z" fill="white" />
                     </svg>
@@ -185,4 +193,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "project");
+export default SectionWrapper(Works, "projects");

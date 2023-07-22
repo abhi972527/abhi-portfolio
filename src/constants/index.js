@@ -65,7 +65,7 @@ export const navLinks = [
         title: "Work",
     },
     {
-        id: "project",
+        id: "projects",
         title: "Projects",
     },
     // {
@@ -280,6 +280,7 @@ const projects = [
         description:
             "The Web-based Movie Catalog Platform is a dynamic and user-friendly website that provides movie enthusiasts with an immersive experience to explore, search, and stay updated on the latest movies.",
         // "Web-based platform that allows users to see, search, and get updates regarding the new and latest movies along with trailer cover pic and lot more info.",
+        showcasePage: "/filmstudio",
         tags: [
             {
                 name: "react",
@@ -326,6 +327,7 @@ const projects = [
         description:
             "Inspired by the popular Airbnb platform, this web-based Airbnb clone project allows users to explore and book a wide range of accommodations, including houses, villas, and more providing users with a personalized booking experience.",
         // "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        showcasePage: "/airbnb",
         tags: [
             {
                 name: "nextjs",
@@ -354,6 +356,7 @@ const projects = [
         description:
             "The WhatsApp Clone is a web-based application that replicates the popular messaging platform, WhatsApp. It allows users to send text messages, make voice and video calls, and share media files with their contacts.",
         // "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        showcasePage: "/whatsapp",
         tags: [
             {
                 name: "nextjs",

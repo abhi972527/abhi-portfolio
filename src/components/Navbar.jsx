@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Element } from 'react-scroll';
+import { Link, Element, scroller } from 'react-scroll';
+import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 
-import { styles } from '../styles'
 import { navLinks } from '../constants';
 import { logo, menu, close } from '../assets';
 import "../style/hamburger.css";
@@ -11,6 +11,9 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navMenu = document.getElementById('nav-menu');
 
@@ -21,7 +24,6 @@ const Navbar = () => {
       navMenu.classList.remove('shadow-md');
     }
   });
-
 
   const toggleMenu = () => {
     const navMenu = document.getElementById("nav-menu");
@@ -38,7 +40,42 @@ const Navbar = () => {
     setActive(title);
   };
 
+  const linkClicked = (link) => {
+    const currentURL = location.pathname;
+    setActive(link.title);
+    if (currentURL != "/") {
+      navigate(`/`)
+      setTimeout(() => {
+        scroller.scrollTo(link.id, {
+          smooth: true,
+          offset: 0,
+          duration: 50,
+        });
+      }, 100);
+    }
+  }
+
+  // const capitalizeFirstLetter = (str) => {
+  //   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  // }
+
   useEffect(() => {
+    // setTimeout(() => {
+    // let section = document.querySelectorAll("section");
+    // window.onscroll = () => {
+    //   section.forEach((sec) => {
+    //     let top = window.scrollY;
+    //     let offset = sec.offsetTop;
+    //     let height = sec.offsetHeight;
+    //     let id = sec.id;
+    //     let capitalizedString = capitalizeFirstLetter(id)
+    //     if (top >= offset && top < offset + height) {
+    //       setActive(capitalizedString);
+    //     }
+    //   });
+    // };
+    // }, 100);
+
     AOS.init({
       duration: 500,
       once: false,
@@ -51,23 +88,24 @@ const Navbar = () => {
       <div className='w-full flex flex-row-reverse lg:flex-row justify-between items-center max-w-full mx-auto'>
         < Link
           to="/"
-          className='flex items-center gap-2'
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className='w-12 h-12 object-contain' />
-          <p className='text-black-200 text-[18px] font-bold cursor-pointer flex' >
-            Abhijeet
-          </p>
+          <RouterLink to="/" className='flex items-center gap-2 cursor-pointer'>
+            <img src={logo} alt="logo" className='w-12 h-12 object-contain' />
+            <p className='text-black-200 text-[18px] font-bold flex' >
+              Abhijeet
+            </p>
+          </RouterLink>
         </ Link>
         <ul className='list-none hidden lg:flex flex-row gap-10'>
           {navLinks.map((link) => (
             <li
               key={link.id}
               className={`${active === link.title ? "text-black-200" : "text-secondary"} hover:text-black-100 text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(link.title)}
+            // onClick={() => setActive(link.title)}
             >
               {/* <a href={`#${link.id}`}> */}
               <Link
@@ -78,6 +116,7 @@ const Navbar = () => {
                 offset={0}
                 duration={50}
                 onSetActive={() => handleSetActive(link.title)}
+                onClick={() => linkClicked(link)}
               >
                 {link.title}
               </Link>

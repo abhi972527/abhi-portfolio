@@ -32,11 +32,7 @@ const Tech = () => {
       <div className='mt-10 md:mt-10 flex flex-row flex-wrap justify-center gap-8 md:gap-8'>
         {technologies.map((technology) => (
           <div data-aos="zoom-in" data-aos-anchor-placement="top-bottom" className='w-20 h-20 md:w-22 md:h-22 cursor-pointer flex items-center justify-center bg-[#fff] rounded-full hover:drop-shadow-md transition-colors duration-300 ease-out hover:bg-[#f9fffc] group' key={technology.name}>
-            {/* <motion.p
-              variants={fadeIn("", "", 0.1, 1)}
-            > */}
             <img src={technology.icon} alt="" className="cursor-pointer w-[48px] h-[48px] hover:w-[52px] hover:h-[52px] md:w-[44px] md:h-[44px] md:hover:w-[45px] md:hover:h-[45px] transform group-hover:scale-110 transition duration-300 ease-in-out" />
-            {/* </motion.p> */}
           </div>
         ))}
       </div>
