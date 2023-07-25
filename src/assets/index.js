@@ -84,7 +84,7 @@ import airbnbmob5 from "./project/airbnbmob5.png";
 import filmstudio1 from "./project/filmstudio1.png";
 import filmstudio2 from "./project/filmstudio2.png";
 import filmstudio3 from "./project/filmstudio3.png";
-import filmstudio4 from "./project/filmstudio.png";
+import filmstudio4 from "./project/filmstudio4.png";
 import filmstudiomob1 from "./project/filmstudiomob1.png";
 import filmstudiomob2 from "./project/filmstudiomob2.png";
 import filmstudiomob3 from "./project/filmstudiomob3.png";
