@@ -24,11 +24,13 @@ const ProjectCard = ({
   source_code_link,
   live_project_link,
   showcasePage,
+  showCase,
 }) => {
   const navigate = useNavigate();
 
-  const toggleProjectShowcase = (data) => {
-    navigate(`${data}`)
+  const toggleProjectShowcase = (showcasePage, showCase) => {
+    sessionStorage.setItem('projectData', JSON.stringify(showCase));
+    navigate(`${showcasePage}`)
   };
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className={`p-5 rounded-2xl sm:w-[360px] w-full ${bg}`}>
@@ -73,7 +75,7 @@ const ProjectCard = ({
       </div>
 
       <div className="mt-6">
-        <span onClick={() => toggleProjectShowcase(showcasePage)} className="hover:underline cursor-pointer text-white font-bold">See Project Details</span>
+        <span onClick={() => toggleProjectShowcase(showcasePage, showCase)} className="hover:underline cursor-pointer text-white font-bold">See Project Details</span>
       </div>
 
       <div className='mt-2 flex flex-wrap gap-2'>
@@ -99,6 +101,7 @@ const Works = () => {
   const navigate = useNavigate();
 
   const toggleProjectShowcase = (projectData) => {
+    sessionStorage.setItem('projectData', JSON.stringify(projectData.showCase));
     navigate(`${projectData.showcasePage}`)
   };
 

@@ -38,6 +38,8 @@ import webDesign from "./tech/webDesign.svg";
 import frontend from "./tech/frontend.svg";
 import backendTech from "./tech/backend.svg";
 import webOpt from "./tech/webOpt.svg";
+import prisma from "./tech/prisma.png";
+import mui from "./tech/mui.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -131,6 +133,8 @@ export {
   tailwind,
   typescript,
   threejs,
+  prisma,
+  mui,
   meta,
   shopify,
   starbucks,

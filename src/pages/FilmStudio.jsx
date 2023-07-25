@@ -1,10 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
+import { projects } from '../constants';
 
 import { airbnb, airbnb1, airbnb2, airbnb3, airbnb4, airbnb5, defination, delivery, development, planning, developmentProcess, launch, github, next } from '../assets';
 
+let images = projects[0].showCase.images;
+
 const FilmStudio = () => {
+    const [projectData, setProjectData] = useState(null);
+
     useEffect(() => {
+        const storedData = sessionStorage.getItem('projectData');
+        if (storedData) {
+            setProjectData(JSON.parse(storedData));
+        }
         window.scrollTo(0, 0);
     }, []);
     var settings = {
@@ -16,20 +25,23 @@ const FilmStudio = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
     };
+    const abc = () => {
+        console.log("🚀 ~ file: FilmStudio.jsx:8 ~ FilmStudio ~ projectData:", projectData)
+    }
     return (
         <div className='bg-white text-black '>
             <div className='bg-[#F6F6F6] pt-32 pb-1 px-4'>
-                <div className='text-[#203993] text-center mb-3 text-[14px] md:text-[18px] font-bold'>
+                <div onClick={() => abc()} className='text-[#203993] text-center mb-3 text-[14px] md:text-[18px] font-bold'>
                     WEB DEV PROJECT
                 </div>
                 <div className='text-center text-[24px] md:text-[40px] lg:text-[52px] font-bold text-[#0252CD]'>
-                    AirBnb (Clone) - A House Rent Application
+                    {`${projectData?.name} - ${projectData?.short}`}
                 </div>
                 <div className='my-8'>
-                    <img src={airbnb} alt="Airbnb" className='w-[80%] md:w-[70%] lg:w-[50%] mx-auto' />
+                    <img src={images.homepage} alt="Image" className='w-[80%] md:w-[70%] lg:w-[50%] mx-auto' />
                 </div>
                 <div className="flex gap-10 md:gap-28 lg:gap-48 my-12 justify-center text-white" >
-                    <button onClick={() => window.open(project.live_project_link, "_blank")} className="p-2 bg-[#0252CD] px-4 rounded-full flex items-center justify-center gap-2 border font-bold shadow-sm shadow-white transition-transform duration-300 ease-out hover:scale-110">
+                    <button onClick={() => window.open(projectData.live_project_link, "_blank")} className="p-2 bg-[#0252CD] px-4 rounded-full flex items-center justify-center gap-2 border font-bold shadow-sm shadow-white transition-transform duration-300 ease-out hover:scale-110">
                         <img
                             src={launch}
                             alt='source code'
@@ -37,7 +49,7 @@ const FilmStudio = () => {
                         />
                         Live
                     </button>
-                    <button onClick={() => window.open(project.source_code_link, "_blank")} className="p-2 bg-[#0252CD] px-4 rounded-full flex items-center justify-center gap-2 border font-bold shadow-sm shadow-white transition-transform duration-300 ease-out hover:scale-110">
+                    <button onClick={() => window.open(projectData.source_code_link, "_blank")} className="p-2 bg-[#0252CD] px-4 rounded-full flex items-center justify-center gap-2 border font-bold shadow-sm shadow-white transition-transform duration-300 ease-out hover:scale-110">
                         <img
                             src={github}
                             alt='source code'
@@ -51,16 +63,14 @@ const FilmStudio = () => {
                 <div className='flex px-4 flex-col lg:flex-row w-full md:max-w-2xl lg:max-w-7xl mx-auto'>
                     <div className='lg:w-1/2'>
                         <div className='text-[24px] md:text-[36px] lg:text-[48px] mb-4 text-[#13AA52] font-semibold'>
-                            AirBnb (Clone)
+                            {projectData?.name}
                         </div>
-                        <div className='text-justify text-[14px] md:text-[16px]'>
-
-                            I developed a web-based Airbnb clone inspired by the popular platform. Users can explore and book various accommodations like houses and villas, offering a personalized booking experience. <br />
-
-                            The project used a robust tech stack, including Next.js for server-side rendering and routing, TypeScript for code robustness, Prisma for simplified database management, MongoDB for scalability, Tailwind CSS for custom UI components, and Cloudinary for efficient image storage. <br />
-
-                            Although TypeScript presented some initial challenges, I gained a solid understanding and successfully completed the project. To enhance security, I integrated GitHub and Google authentication for signup and login. <br />
-                            The application's main features include accommodation exploration and bookings. Property owners can list their properties for rent, expanding the options available to users. The project delivers a seamless and user-friendly experience, and I'll continue to improve it based on user feedback. <br />
+                        <div className='text-justify flex flex-col gap-1 md:gap-2 text-[14px] md:text-[16px]'>
+                            {projectData?.content.map((description, i) => (
+                                <div key={i}>
+                                    {description}
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className='flex justify-center items-center lg:w-1/2 mt-8 md:mt-0 md:p-8'>
@@ -78,18 +88,18 @@ const FilmStudio = () => {
                                     Tech Stack
                                 </div>
                                 <div className='flex gap-4'>
-                                    <img src={next} alt="" className="w-[22px] h-[22px] md:w-[24px] md:h-[24px]" />
-                                    <img src={next} alt="" className="w-[22px] h-[22px] md:w-[24px] md:h-[24px]" />
-                                    <img src={next} alt="" className="w-[22px] h-[22px] md:w-[24px] md:h-[24px]" />
+                                    {images.tech.map((img, i) => (
+                                        <img src={img} alt="Image" key={i} className="w-[22px] h-[22px] md:w-[24px] md:h-[24px]" />
+                                    ))}
                                 </div>
                             </div>
                             <div className='flex p-4 mx-auto'>
                                 <div className='min-w-[120px] font-semibold'>
                                     Live Demo
                                 </div>
-                                <div onClick={() => window.open(project.live_project_link, "_blank")}>
+                                <div onClick={() => window.open(projectData.live_project_link, "_blank")}>
                                     <div className="flex group items-center cursor-pointer gap-4 text-black">
-                                        <div className="group-hover:underline" onClick={() => toggleProjectShowcase(project)}>Project</div>
+                                        <div className="group-hover:underline">Project</div>
                                         <div className="transition-transform duration-300 ease-out group-hover:translate-x-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
@@ -109,11 +119,11 @@ const FilmStudio = () => {
                             Problem Statement
                         </div>
                         <div className='text-[14px] md:text-[18px] text-justify text-[#6F74A7]'>
-                            One of the main problems that people face when looking to rent an accomodation is the hassle of finding a reliable and user-friendly platform to search for and book rental accomodations. In addition, property owners who want to rent out their properties often struggle to find a suitable platform to list their properties and manage their rentals.
+                            {projectData?.problemStatement}
                         </div>
                     </div>
                     <div className=''>
-                        <img src={airbnb1} alt="Airbnb" className='w-[100%] md:w-[80%] rounded-xl mx-auto' />
+                        <img src={images.product[0]} alt="Img" className='w-[100%] md:w-[80%] rounded-xl mx-auto' />
                     </div>
                 </div>
             </div>
@@ -137,7 +147,6 @@ const FilmStudio = () => {
                         Planning
                     </div>
                 </div>
-
                 <div className='text-center flex flex-col gap-5 items-center'>
                     <div className='h-28 w-28 rounded-full bg-[#DEE7FF] flex items-center justify-center'>
                         <img src={development} alt="Development" className='w-9 h-9' />
@@ -159,32 +168,25 @@ const FilmStudio = () => {
                 High-Fidelity Figma Design
             </div>
             <div>
-                <img src={airbnb1} alt="Airbnb" className='w-[100%] mx-auto' />
+                <img src={images.product[0]} alt="Airbnb" className='w-full md:w-[80%] mx-auto' />
             </div>
             <div className='text-center text-[24px] md:text-[38px] font-bold mb-5 mt-10 md:mb-10 md:mt-20'>
                 Development
             </div>
             <div className=''>
-                <img src={developmentProcess} alt="DevelopmentProcess" className=' w-[80%] md:w-[40%] mx-auto' />
+                <img src={images.developmentProcess} alt="DevelopmentProcess" className=' w-[80%] md:w-[40%] mx-auto' />
             </div>
             <div className='text-center mt-10 md:mt-20 py-4 md:py-9 bg-[#1E9AFF] text-white font-bold text-[24px] md:text-[30px]'>
                 Product
             </div>
             <div className='bg-[#BEC1D5] py-20'>
-                <div className='mx-auto w-[70%] md:max-w-4xl'>
+                <div className='mx-auto md:max-w-[50%]'>
                     <Slider {...settings}>
-                        <div>
-                            <img src={airbnb2} alt="airbnb2" />
-                        </div>
-                        <div>
-                            <img src={airbnb3} alt="airbnb3" />
-                        </div>
-                        <div>
-                            <img src={airbnb4} alt="airbnb4" />
-                        </div>
-                        <div>
-                            <img src={airbnb5} alt="airbnb5" />
-                        </div>
+                        {images.product.slice(1).map((img, i) => (
+                            <div key={i} className='mx-auto'>
+                                <img src={img} key={i} alt="airbnb" className='max-h-[300px] md:max-h-[500px] mx-auto' />
+                            </div>
+                        ))}
                     </Slider>
                 </div>
             </div>
@@ -203,18 +205,11 @@ const FilmStudio = () => {
                             Learnings
                         </div>
                         <ul class="list-disc flex flex-col gap-4 text-[#6F74A7] font-normal text-[14px]">
-                            <li>
-                                Gained extensive knowledge of full authentication and authorization implementation, including the use of industry-standard security protocols.
-                            </li>
-                            <li>
-                                Sharpened my backend skills, specifically in optimizing database queries, improving performance, and handling server-side logic.
-                            </li>
-                            <li>
-                                Learned how to properly handle files, including file upload, storage, and retrieval, ensuring that the app's data is organized and easily accessible while keeping it secure.
-                            </li>
-                            <li>
-                                Acquired proficiency in NextJS and implemented various features utilizing industry-standard best practices.
-                            </li>
+                            {projectData?.learnings.map((learning, i) => (
+                                <li key={i}>
+                                    {learning}
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <div className='p-8 md:p-14  bg-[#F6F6F6] rounded-xl'>
@@ -222,15 +217,11 @@ const FilmStudio = () => {
                             Challenges
                         </div>
                         <ul class="list-disc flex flex-col gap-4 text-[#6F74A7] font-normal text-[14px]">
-                            <li>
-                                As i developed this project, i encountered various obstacles. One my biggest challenges was choosing the right tools and technologies for the project.
-                            </li>
-                            <li>
-                                I conducted brainstorming and carefully weighed my options before making a decision. Furthermore, using NextJS was a new experience for me, and i encountered difficulties while implementing its features. Finally, i had to work under time constraints, which added pressure to the project.
-                            </li>
-                            <li>
-                                However, i worked effectively to overcome these obstacles and ultimately delivered a high-quality product.
-                            </li>
+                            {projectData?.challenges.map((challenge, i) => (
+                                <li key={i}>
+                                    {challenge}
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>

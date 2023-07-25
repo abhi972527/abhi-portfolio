@@ -3,6 +3,7 @@ import {
     backend,
     creator,
     web,
+    mui,
     javascript,
     typescript,
     html,
@@ -16,6 +17,7 @@ import {
     git,
     next,
     nuxt,
+    prisma,
     mongoose,
     gitHub,
     express,
@@ -38,13 +40,45 @@ import {
     call,
     email,
     filmstudio,
+    filmstudio1,
+    filmstudio2,
+    filmstudio3,
+    filmstudio4,
+    filmstudiomob1,
+    filmstudiomob2,
+    filmstudiomob3,
+    filmstudiomob4,
     airbnb,
+    airbnb1,
+    airbnb2,
+    airbnb3,
+    airbnb4,
+    airbnb5,
+    airbnb6,
+    airbnb7,
+    airbnbmob1,
+    airbnbmob2,
+    airbnbmob3,
+    airbnbmob4,
+    airbnbmob5,
     whatsapp,
+    whatsapp1,
+    whatsapp2,
+    whatsapp3,
+    whatsapp4,
+    whatsapp5,
+    whatsappmob1,
+    whatsappmob2,
     whatsApp,
     webDesign,
     frontend,
     backendTech,
     webOpt,
+    defination,
+    planning,
+    development,
+    delivery,
+    developmentProcess,
 } from "../assets";
 
 export const navLinks = [
@@ -190,6 +224,10 @@ const technologies = [
         name: "docker",
         icon: docker,
     },
+    {
+        name: "mui",
+        icon: mui,
+    },
 ];
 
 const experiences = [
@@ -299,25 +337,39 @@ const projects = [
         source_code_link: "https://github.com/git-abhijeet/Filmpire",
         live_project_link: "https://abhi-filmpire.netlify.app",
         showCase: {
-            techStack: [reactjs, nodejs, typescript],
-            description: "Jobit is a web-based application for job posting that my team and I created using React and JSearch API. Our platform connects developers with millions of job opportunities for free. Through Jobit, developers can easily search for job postings according to their preferred location, employment type, level, and salary range. The application provides in-depth information about the job postings, including company details, job requirements, and responsibilities. Users can also explore job openings from specific companies and other similar companies based on their search criteria. Moreover, we incorporated a salary estimate feature and included the option to switch between light and dark themes for user convenience.",
-            problemStatement: "One of the main problems that people face when looking to rent a car is the hassle of finding a reliable and user-friendly platform to search for and book rental cars. In addition, car owners who want to rent out their vehicles often struggle to find a suitable platform to list their cars and manage their rentals.",
-            img: {
-                first: null,
-                second: null,
-                third: null,
+            name: "FilmStudio",
+            short: "A Movie Application",
+            source_code_link: "https://github.com/git-abhijeet/Filmpire",
+            live_project_link: "https://abhi-filmpire.netlify.app",
+            content: [
+                "I developed a web-based FilmStudio application, a movie platform that allows movie enthusiasts to explore a vast collection of movies, complete with teasers, trailers, posters, character details, and more.",
+                "The tech stack used in this project includes React and JavaScript for code robustness, Material UI for creating custom UI components, and Redux for state management along with Redux Toolkit Query.",
+                "Implementing the Redux store and Redux Toolkit Query was initially challenging, but I made steady progress by referring to various documentation and watching tutorial videos on YouTube. With dedicated effort, I gained a solid understanding of these tools and successfully completed the project.",
+                "The main features allow users to explore a diverse range of movies, powered by TMDB's API from the Rapid API website, offering a vast selection of different APIs.",
+                "Overall, I'm proud of this user-friendly FilmStudio platform that movie enthusiasts will enjoy.",
+            ],
+            problemStatement: "One of the significant challenges people face when seeking a movie to watch in their leisure time is uncertainty about the movie's quality, ratings, and reviews. Oftentimes, they end up choosing a film that turns out to be disappointing or uninteresting, leaving them with a sense of wasted time and regret for watching a lackluster movie.",
+            images: {
+                homepage: filmstudio1,
+                tech: [reactjs, javascript, mui, html, css, redux],
+                developmentProcess,
+                problemStatement: filmstudio,
+                myProcess: [defination, planning, development, delivery],
+                figma: [filmstudio, filmstudio1],
+                product: [filmstudio, filmstudio1, filmstudio2, filmstudio3, filmstudio4, filmstudiomob1, filmstudiomob2, filmstudiomob3, filmstudiomob4],
             },
             learnings: [
-                "Gained extensive knowledge of full authentication and authorization implementation, including the use of industry-standard security protocols such as JSON Web Tokens (JWT).",
-                "Sharpened my backend skills, specifically in optimizing database queries, improving performance, and handling server-side logic.",
-                "Learned how to properly handle files, including file upload, storage, and retrieval, ensuring that the app's data is organized and easily accessible while keeping it secure.",
-                "Acquired proficiency in NextJS and implemented various features utilizing industry-standard best practices."
+                "During the development process, I gained extensive knowledge of how to implement external APIs with API keys, enabling seamless integration of data and services from external sources.",
+                "My frontend skills underwent significant improvement as I focused on writing efficient and optimized code, enhancing overall performance, and leveraging component reusability.",
+                "I also learned the importance of maintaining a well-organized file and folder structure in the project, including setting up a Redux store and implementing Redux Toolkit Query for efficient API data fetching.",
+                "Throughout the project, I honed my proficiency in ReactJS and successfully implemented various features while adhering to industry-standard best practices. This hands-on experience allowed me to deliver a user-friendly and robust application, showcasing the power and capabilities of ReactJS in building modern web applications.",
             ],
             challenges: [
-                "As we developed Morent, our team encountered various obstacles. One of our biggest challenges was choosing the right tools and technologies for the project. ",
-                "We conducted brainstorming and carefully weighed our options before making a decision. Furthermore, using NextJS was a new experience for us, and we encountered difficulties while implementing its features. Finally, we had to work under time constraints, which added pressure to the project. ",
-                "However, we collaborated effectively to overcome these obstacles and ultimately delivered a high-quality product within the given timeline.",
-            ]
+                "During the development of this project, I faced several challenges that required thoughtful consideration and problem-solving. One of the main hurdles was selecting the appropriate tools and technologies for the project. I engaged in brainstorming sessions and carefully evaluated various options before making informed decisions.",
+                "Working with Redux store and Redux Toolkit Query was a novel experience for me, and I encountered some difficulties while implementing their features. However, I dedicated time to learning and resolving these issues to ensure smooth integration and functionality.",
+                "Additionally, the project had time constraints, which added pressure to deliver results within a specific timeframe. Despite this challenge, I managed my time effectively and prioritized tasks to meet the project's goals successfully.",
+                "Throughout the process, I remained resilient and proactive in overcoming these obstacles, resulting in the delivery of a high-quality product. This experience has enriched my skills and problem-solving abilities, empowering me to tackle future projects with greater confidence."
+            ],
         }
     },
     {
@@ -346,7 +398,37 @@ const projects = [
         source_code_link: "https://github.com/git-abhijeet/airbnb_clone",
         live_project_link: "https://airbnb-clone-practice-project.vercel.app",
         showCase: {
-
+            name: "AirBnb (Clone)",
+            short: "A House Rent Application",
+            source_code_link: "https://github.com/git-abhijeet/airbnb_clone",
+            live_project_link: "https://airbnb-clone-practice-project.vercel.app",
+            content: [
+                "I developed a web-based Airbnb clone inspired by the popular platform. Users can explore and book various accommodations like houses and villas, offering a personalized booking experience.",
+                "The project used a robust tech stack, including Next.js for server-side rendering and routing, TypeScript for code robustness, Prisma for simplified database management, MongoDB for scalability, Tailwind CSS for custom UI components, and Cloudinary for efficient image storage.",
+                "Although TypeScript presented some initial challenges, I gained a solid understanding and successfully completed the project. To enhance security, I integrated GitHub and Google authentication for signup and login.",
+                "The application's main features include accommodation exploration and bookings. Property owners can list their properties for rent, expanding the options available to users. The project delivers a seamless and user-friendly experience, and I'll continue to improve it based on user feedback.",
+            ],
+            problemStatement: "One of the main problems that people face when looking to rent an accomodation is the hassle of finding a reliable and user-friendly platform to search for and book rental accomodations. In addition, property owners who want to rent out their properties often struggle to find a suitable platform to list their properties and manage their rentals.",
+            images: {
+                homepage: airbnb1,
+                tech: [next, typescript, tailwind, express, prisma, mongodb],
+                developmentProcess,
+                problemStatement: airbnb,
+                myProcess: [defination, planning, development, delivery],
+                figma: [airbnb, airbnbmob1],
+                product: [airbnb, airbnb1, airbnb2, airbnb3, airbnb4, airbnb5, airbnb6, airbnb7, airbnbmob1, airbnbmob2, airbnbmob3, airbnbmob4, airbnbmob5],
+            },
+            learnings: [
+                "Gained extensive knowledge of full authentication and authorization implementation, including the use of industry-standard security protocols.",
+                "Sharpened my backend skills, specifically in optimizing database queries, improving performance, and handling server-side logic.",
+                "Learned how to properly handle files, including file upload, storage, and retrieval, ensuring that the app's data is organized and easily accessible while keeping it secure.",
+                "Acquired proficiency in NextJS and implemented various features utilizing industry-standard best practices.",
+            ],
+            challenges: [
+                "As i developed this project, i encountered various obstacles. One my biggest challenges was choosing the right tools and technologies for the project.",
+                "I conducted brainstorming and carefully weighed my options before making a decision. Furthermore, using NextJS was a new experience for me, and i encountered difficulties while implementing its features. Finally, i had to work under time constraints, which added pressure to the project.",
+                "However, i worked effectively to overcome these obstacles and ultimately delivered a high-quality product.",
+            ],
         }
     },
     {
@@ -375,7 +457,40 @@ const projects = [
         source_code_link: "https://github.com/git-abhijeet/whatsApp_clone",
         live_project_link: "https://whats-app-clone-delta.vercel.app",
         showCase: {
-
+            name: "WhatsApp (Clone)",
+            short: "A Chatting Application",
+            source_code_link: "https://github.com/git-abhijeet/whatsApp_clone",
+            live_project_link: "https://whats-app-clone-delta.vercel.app",
+            content: [
+                "I developed this web-based WhatsApp clone, drawing inspiration from the popular application WhatsApp Web. The project replicates the core functionalities of WhatsApp in a web-based version.",
+                "For this project, I employed a robust tech stack, utilizing Next.js for server-side rendering and routing, JavaScript for ensuring code robustness, Prisma for simplified database management, MongoDB for scalability, Tailwind CSS for creating custom UI components, and socket.io for real-time chat functionality, among other tools.",
+                "Although I encountered initial challenges with Prisma, and socket.io, I dedicated time and effort to grasp their concepts and successfully completed the project. To prioritize security, I integrated Google Firebase authentication for user signup and login, ensuring a secure user experience.",
+                "The application boasts various key features, including live chatting, video calling, status indicators (online/offline), message status indicators (single tick, double tick, and blue tick for sent, received, and seen messages), and the ability to share media files like pictures, videos, and documents.",
+                "Through this project, I expanded my knowledge and skills in web development and gained valuable experience in building feature-rich applications. The WhatsApp clone offers users an immersive chatting experience and serves as a testament to my expertise in frontend and backend technologies."
+            ],
+            problemStatement: "The project aimed to develop a web-based WhatsApp clone, replicating its core functionalities. Challenges were encountered while integrating Prisma and socket.io, but they were overcome through dedicated efforts. The application offers live chatting, video calling, and media sharing features, showcasing proficiency in frontend and backend technologies.",
+            images: {
+                homepage: whatsapp1,
+                tech: [next, javascript, tailwind, express, prisma, mongodb],
+                developmentProcess,
+                problemStatement: whatsapp,
+                myProcess: [defination, planning, development, delivery],
+                figma: [whatsapp, whatsapp1],
+                product: [whatsapp, whatsapp1, whatsapp2, whatsapp3, whatsapp4, whatsapp5, whatsappmob1, whatsappmob2],
+            },
+            learnings: [
+                "Gained extensive knowledge of google firebase authentication and authorization implementation, including the use of industry-standard security protocols.",
+                "Sharpened my backend skills, specifically in optimizing database queries, improving performance, and handling server-side logic.",
+                "Learned how to properly handle files, including file upload, storage, and retrieval, ensuring that the app's data is organized and easily accessible while keeping it secure.",
+                "Learned the use of socket.io, zegocloud, cloudinary and lot more other plugins in this project",
+                "Acquired proficiency in NextJS and implemented various features utilizing industry-standard best practices.",
+            ],
+            challenges: [
+                "During the development of this project, I encountered several obstacles, with one of the biggest challenges being selecting the most suitable tools and technologies for the task at hand. To overcome this challenge, I conducted thorough brainstorming sessions and carefully evaluated various options before making informed decisions.",
+                "Implementing socket.io and incorporating features like voice calls, video calls, and showing online/offline status presented new and unfamiliar territory for me. As a result, I faced difficulties while integrating these features into the application.",
+                "However, I approached these challenges with determination and a strong will to learn. I extensively researched documentation and watched tutorial videos on YouTube to gain a solid understanding and expertise. This proactive approach allowed me to overcome these obstacles effectively and deliver a high-quality product.",
+                "The project's successful completion not only showcases my ability to tackle complex technical challenges but also highlights my dedication to continuous learning and improvement as a developer."
+            ],
         }
     },
 ];
