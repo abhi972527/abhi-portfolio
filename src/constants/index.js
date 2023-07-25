@@ -333,7 +333,7 @@ const projects = [
             //     color: "pink-text-gradient",
             // },
         ],
-        image: filmstudio,
+        image: filmstudio1,
         source_code_link: "https://github.com/git-abhijeet/Filmpire",
         live_project_link: "https://abhi-filmpire.netlify.app",
         showCase: {
@@ -394,7 +394,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: airbnb,
+        image: airbnb1,
         source_code_link: "https://github.com/git-abhijeet/airbnb_clone",
         live_project_link: "https://airbnb-clone-practice-project.vercel.app",
         showCase: {
@@ -453,7 +453,7 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: whatsapp,
+        image: whatsapp1,
         source_code_link: "https://github.com/git-abhijeet/whatsApp_clone",
         live_project_link: "https://whats-app-clone-delta.vercel.app",
         showCase: {
